@@ -12,10 +12,10 @@
         <PathEntry path="lib/xalan-2.6.0.jar"/>
         <PathEntry path="lib/icu4j-2.6.1.jar"/>
         <PathEntry path="lib/jdom-1.1.3.jar"/>
-        <PathEntry path="lib/jackson-databind-2.8.7.jar"/>
+        <PathEntry path="lib/jackson-databind-2.9.10.7.jar"/>
+        <PathEntry path="lib/jackson-annotations-2.9.10.jar"/>
         <PathEntry path="lib/xercesImpl-2.11.0.jar"/>
-        <PathEntry path="lib/commons-collections4-4.0.jar"/>
-        <PathEntry path="lib/jackson-annotations-2.8.7.jar"/>
+        <PathEntry path="lib/commons-collections4-4.1.jar"/>
     </ClassPath>
     <Profiles>
         <Profile uid="fb99423e-12d3-4505-926b-f150a22ec337" id="CPSwarm.concept">
