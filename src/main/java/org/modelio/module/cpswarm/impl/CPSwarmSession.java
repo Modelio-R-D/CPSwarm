@@ -7,11 +7,9 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.modelio.api.modelio.mc.IModelComponentDescriptor;
 import org.modelio.api.modelio.mc.IModelComponentService;
 import org.modelio.api.module.IModule;
-import org.modelio.api.module.context.configuration.IModuleUserConfiguration;
 import org.modelio.api.module.lifecycle.DefaultModuleLifeCycleHandler;
 import org.modelio.api.module.lifecycle.IModuleLifeCycleHandler;
 import org.modelio.api.module.lifecycle.ModuleException;
-import org.modelio.module.cpswarm.api.CPSwarmParameters;
 import org.modelio.vbasic.version.Version;
 
 /**
@@ -58,19 +56,7 @@ public class CPSwarmSession extends DefaultModuleLifeCycleHandler implements IMo
     }
 
     @Override
-    public void unselect() {
-    }
-
-    private void initParameter() {
-        IModuleUserConfiguration configuration = this.module.getModuleContext().getConfiguration();
-        if (configuration.getParameterValue (CPSwarmParameters.WORKSPACEPATH).isEmpty ()) {
-            configuration.setParameterValue (CPSwarmParameters.WORKSPACEPATH, "");
-        }
-
-        if (configuration.getParameterValue (CPSwarmParameters.WORKSPACEPATH).isEmpty ()) {
-            configuration.setParameterValue (CPSwarmParameters.WORKSPACEPATH, "/opt/ros/lunar");
-        }
-    }
+    public void unselect() {}
 
     private void installRamc() {
         Path mdaplugsPath = this.module.getModuleContext().getConfiguration().getModuleResourcesPath();
