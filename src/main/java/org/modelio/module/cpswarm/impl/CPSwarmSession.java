@@ -20,7 +20,7 @@ import org.modelio.vbasic.version.Version;
 public class CPSwarmSession extends DefaultModuleLifeCycleHandler implements IModuleLifeCycleHandler {
     /**
      * Constructor with the CPSwarm Mdac
-     * 
+     *
      * @param module : the CPSwarm Mdac module
      */
     public CPSwarmSession(IModule module) {
@@ -31,7 +31,6 @@ public class CPSwarmSession extends DefaultModuleLifeCycleHandler implements IMo
     public boolean start() throws ModuleException {
         installRamc();
         installStyles();
-        //        initParameter();
         return super.start();
     }
 
@@ -67,7 +66,7 @@ public class CPSwarmSession extends DefaultModuleLifeCycleHandler implements IMo
         if (configuration.getParameterValue (CPSwarmParameters.WORKSPACEPATH).isEmpty ()) {
             configuration.setParameterValue (CPSwarmParameters.WORKSPACEPATH, "");
         }
-        
+
         if (configuration.getParameterValue (CPSwarmParameters.WORKSPACEPATH).isEmpty ()) {
             configuration.setParameterValue (CPSwarmParameters.WORKSPACEPATH, "/opt/ros/lunar");
         }
@@ -75,11 +74,11 @@ public class CPSwarmSession extends DefaultModuleLifeCycleHandler implements IMo
 
     private void installRamc() {
         Path mdaplugsPath = this.module.getModuleContext().getConfiguration().getModuleResourcesPath();
-        
+
         final IModelComponentService modelComponentService =  CPSwarmModule.getInstance().getModuleContext().getModelioServices().getModelComponentService();
         for (IModelComponentDescriptor mc : modelComponentService.getModelComponents()) {
             if (mc.getName().toLowerCase().equals("cpswarmlibrary")) {
-                if (new Version(mc.getVersion()).isOlderThan(new Version("3.9.03"))) {
+                if (new Version(mc.getVersion()).isOlderThan(new Version("3.10.00"))) {
                     modelComponentService.deployModelComponent(new File(mdaplugsPath.resolve("res" + File.separator + "ramc" + File.separator + "CPSwarmLibrary.ramc").toString()), new NullProgressMonitor());
                 } else {
                     // Ramc already deployed...
@@ -87,7 +86,7 @@ public class CPSwarmSession extends DefaultModuleLifeCycleHandler implements IMo
                 }
             }
         }
-        
+
         // No ramc found, deploy it
         modelComponentService.deployModelComponent(new File(mdaplugsPath.resolve("res" + File.separator + "ramc" + File.separator + "CPSwarmLibrary.ramc").toString()), new NullProgressMonitor());
     }
