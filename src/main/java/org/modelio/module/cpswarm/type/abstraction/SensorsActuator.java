@@ -172,11 +172,11 @@ public class SensorsActuator {
         }
 
 
-        static {
-            for (SensorsActuator.Category c: values()) {
-                CONSTANTS.put(c.value, c);
-            }
-        }
+static {
+    for (SensorsActuator.Category c: values()) {
+        CONSTANTS.put(c.value, c);
+    }
+}
     }
 
 }

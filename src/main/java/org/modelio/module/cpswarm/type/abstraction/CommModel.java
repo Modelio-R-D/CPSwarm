@@ -104,11 +104,11 @@ public class CommModel {
         }
 
 
-        static {
-            for (CommModel.Paradigm c: values()) {
-                CONSTANTS.put(c.value, c);
-            }
-        }
+static {
+    for (CommModel.Paradigm c: values()) {
+        CONSTANTS.put(c.value, c);
+    }
+}
     }
 
 }

@@ -1,237 +1,428 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Module id="${project.name}" class="org.modelio.module.cpswarm.impl.CPSwarmModule" binaryversion="4.1.0" version="${project.version}" schema-level="2" uid="b914be5e-e9d5-4c22-84be-9edec27e429c" author="" image="" url="">
+<?xml version="1.0" encoding="UTF-8"?>
+<Module author="" binaryversion="4.1.0"
+    class="org.modelio.module.cpswarm.impl.CPSwarmModule"
+    id="${project.name}" image="" schema-level="2"
+    uid="b914be5e-e9d5-4c22-84be-9edec27e429c" url="" version="${project.version}">
     <ClassPath>
         <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
-        <PathEntry path="lib/jackson-core-2.8.7.jar"/>
-        <PathEntry path="lib/jaxen-1.1.jar"/>
-        <PathEntry path="lib/dom4j-1.6.1.jar"/>
-        <PathEntry path="lib/jdom-1.0.jar"/>
-        <PathEntry path="lib/xml-apis-1.3.02.jar"/>
-        <PathEntry path="lib/xom-1.0.jar"/>
-        <PathEntry path="lib/xmlParserAPIs-2.6.2.jar"/>
-        <PathEntry path="lib/xalan-2.6.0.jar"/>
-        <PathEntry path="lib/icu4j-2.6.1.jar"/>
-        <PathEntry path="lib/jdom-1.1.3.jar"/>
-        <PathEntry path="lib/jackson-databind-2.9.10.7.jar"/>
-        <PathEntry path="lib/jackson-annotations-2.9.10.jar"/>
-        <PathEntry path="lib/xercesImpl-2.11.0.jar"/>
-        <PathEntry path="lib/commons-collections4-4.1.jar"/>
     </ClassPath>
     <Profiles>
-        <Profile uid="fb99423e-12d3-4505-926b-f150a22ec337" id="CPSwarm.concept">
-            <Stereotype name="Actuator" metaclass="Standard.Class" owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Actuator.label" uid="431b7386-fd22-474a-a1f0-262e6cb763df" is-abstract="false">
+        <Profile id="CPSwarm.concept" uid="fb99423e-12d3-4505-926b-f150a22ec337">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Actuator.label"
+                metaclass="Standard.Class" name="Actuator"
+                owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" uid="431b7386-fd22-474a-a1f0-262e6cb763df">
                 <Icon path="res/icon/gui/actuator.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Behavior" metaclass="Standard.StateMachine" owner-stereotype="" is-hidden="false" label="%stereotype.Behavior.label" uid="a993fdfc-bb89-477d-99fe-2a4b3bc43f27" is-abstract="true">
+            <Stereotype is-abstract="true" is-hidden="false"
+                label="%stereotype.Behavior.label"
+                metaclass="Standard.StateMachine" name="Behavior"
+                owner-stereotype="" uid="a993fdfc-bb89-477d-99fe-2a4b3bc43f27">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="CPSwarmComponent" metaclass="Standard.Class" owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" is-hidden="true" label="%stereotype.CPSSwarmComponent.label" uid="ded65f03-9b1f-4279-82e7-4b2d4023ec0e" is-abstract="true">
+            <Stereotype is-abstract="true" is-hidden="true"
+                label="%stereotype.CPSSwarmComponent.label"
+                metaclass="Standard.Class" name="CPSwarmComponent"
+                owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" uid="ded65f03-9b1f-4279-82e7-4b2d4023ec0e">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="CommunicationInterface" metaclass="Standard.Class" owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.CommunicationInterface.label" uid="6893d58e-559b-4b17-93d5-6172401f6980" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.CommunicationInterface.label"
+                metaclass="Standard.Class" name="CommunicationInterface"
+                owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" uid="6893d58e-559b-4b17-93d5-6172401f6980">
                 <Icon path="res/icon/gui/communicationInterface.png"/>
                 <Image path=""/>
                 <TagTypes>
-                    <TagType name="communicationType" uid="c3d7a97c-f68b-46d1-ba9e-aa7cad603d4a" label="%tagtype.communicationType.label" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="communicationParams" uid="362bdaaf-d951-4437-8fad-0d5bfaee39d4" label="%tagtype.communicationParams.label" parameter-card="*" is-hidden="false" is-signed="false"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.communicationType.label"
+                        name="communicationType" parameter-card="1" uid="c3d7a97c-f68b-46d1-ba9e-aa7cad603d4a"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.communicationParams.label"
+                        name="communicationParams" parameter-card="*" uid="362bdaaf-d951-4437-8fad-0d5bfaee39d4"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="Controller" metaclass="Standard.Class" owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Controller.label" uid="ba5073cb-49b9-4e5b-84ff-252f8bc1efe9" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Controller.label"
+                metaclass="Standard.Class" name="Controller"
+                owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" uid="ba5073cb-49b9-4e5b-84ff-252f8bc1efe9">
                 <Icon path="res/icon/gui/controller.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="EnvironmentDefinition" metaclass="Standard.Package" owner-stereotype="" is-hidden="true" label="%stereotype.EnvironmentDefinition.label" uid="308a413a-7415-46f0-b2f5-3a0abc21a4b4" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="true"
+                label="%stereotype.EnvironmentDefinition.label"
+                metaclass="Standard.Package"
+                name="EnvironmentDefinition" owner-stereotype="" uid="308a413a-7415-46f0-b2f5-3a0abc21a4b4">
                 <Icon path="res/icon/gui/environment.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="FitnessDefinition" metaclass="Standard.Package" owner-stereotype="" is-hidden="true" label="%stereotype.FitnessDefinition.label" uid="bf70e1ec-cc1b-43d6-9e41-0680e431f190" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="true"
+                label="%stereotype.FitnessDefinition.label"
+                metaclass="Standard.Package" name="FitnessDefinition"
+                owner-stereotype="" uid="bf70e1ec-cc1b-43d6-9e41-0680e431f190">
                 <Icon path="res/icon/gui/fitnessdefinition.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="FitnessFunction" metaclass="Standard.Class" owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.FitnessFunction.label" uid="67792719-f8fd-47e6-b093-2c5244565789" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.FitnessFunction.label"
+                metaclass="Standard.Class" name="FitnessFunction"
+                owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" uid="67792719-f8fd-47e6-b093-2c5244565789">
                 <Icon path="res/icon/gui/fitnessfunction.png"/>
                 <Image path=""/>
                 <TagTypes>
-                    <TagType name="minimumCandidates" uid="04028dbd-2c81-41f4-ade6-95da3f3a4fce" label="%tagtype.minimumCandidates.label" parameter-card="1" is-hidden="true" is-signed="false"/>
-                    <TagType name="maximumCandidates" uid="d5d00754-2592-4ad8-bd95-bb22c7b80a78" label="%tagtype.maximumCandidates.label" parameter-card="1" is-hidden="true" is-signed="false"/>
+                    <TagType is-hidden="true" is-signed="false"
+                        label="%tagtype.minimumCandidates.label"
+                        name="minimumCandidates" parameter-card="1" uid="04028dbd-2c81-41f4-ade6-95da3f3a4fce"/>
+                    <TagType is-hidden="true" is-signed="false"
+                        label="%tagtype.maximumCandidates.label"
+                        name="maximumCandidates" parameter-card="1" uid="d5d00754-2592-4ad8-bd95-bb22c7b80a78"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="OptimisedArgument" metaclass="Standard.UmlModelElement" owner-stereotype="" is-hidden="true" label="%stereotype.OptimisedArgument.label" uid="df23066a-482d-4ac0-a757-7e581cee88c7" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="true"
+                label="%stereotype.OptimisedArgument.label"
+                metaclass="Standard.UmlModelElement"
+                name="OptimisedArgument" owner-stereotype="" uid="df23066a-482d-4ac0-a757-7e581cee88c7">
                 <Icon path=""/>
                 <Image path=""/>
                 <TagTypes>
-                    <TagType name="scale" uid="2d02c528-765e-468c-b610-8636b5739291" label="%tagtype.scale.label" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="min" uid="4f414038-8f63-4816-a52e-df06287dbf0e" label="%tagtype.rangeMin.label" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="max" uid="51f3d8f5-ef5d-4e0a-ad42-a3eda4e5e78a" label="%tagtype.rangeMax.label" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.scale.label" name="scale"
+                        parameter-card="1" uid="2d02c528-765e-468c-b610-8636b5739291"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.rangeMin.label" name="min"
+                        parameter-card="1" uid="4f414038-8f63-4816-a52e-df06287dbf0e"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.rangeMax.label" name="max"
+                        parameter-card="1" uid="51f3d8f5-ef5d-4e0a-ad42-a3eda4e5e78a"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="Optimised_End" metaclass="Standard.AssociationEnd" owner-stereotype="mref#'' {df23066a-482d-4ac0-a757-7e581cee88c7} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Optimised_End.label" uid="f49e8308-8867-4964-a590-a0f5450bb27b" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Optimised_End.label"
+                metaclass="Standard.AssociationEnd" name="Optimised_End"
+                owner-stereotype="mref#'' {df23066a-482d-4ac0-a757-7e581cee88c7} Infrastructure.Stereotype" uid="f49e8308-8867-4964-a590-a0f5450bb27b">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Optimised_Parameter" metaclass="Standard.Parameter" owner-stereotype="mref#'' {df23066a-482d-4ac0-a757-7e581cee88c7} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Optimised_Parameter.label" uid="3d061da0-d6df-4f49-902a-3abc6419139e" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Optimised_Parameter.label"
+                metaclass="Standard.Parameter"
+                name="Optimised_Parameter"
+                owner-stereotype="mref#'' {df23066a-482d-4ac0-a757-7e581cee88c7} Infrastructure.Stereotype" uid="3d061da0-d6df-4f49-902a-3abc6419139e">
                 <Icon path=""/>
                 <Image path=""/>
                 <TagTypes>
-                    <TagType name="file" uid="0ee88c79-d86d-43ec-b709-0ffa72aacac6" label="%tagtype.file.label" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.file.label" name="file"
+                        parameter-card="1" uid="0ee88c79-d86d-43ec-b709-0ffa72aacac6"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="Optimised_Port" metaclass="Standard.Port" owner-stereotype="mref#'' {df23066a-482d-4ac0-a757-7e581cee88c7} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Optimised_Port.label" uid="7126f7f9-776f-4dbb-84a6-dec48bb7997f" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Optimised_Port.label"
+                metaclass="Standard.Port" name="Optimised_Port"
+                owner-stereotype="mref#'' {df23066a-482d-4ac0-a757-7e581cee88c7} Infrastructure.Stereotype" uid="7126f7f9-776f-4dbb-84a6-dec48bb7997f">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Problem" metaclass="Standard.Class" owner-stereotype="" is-hidden="true" label="%stereotype.Problem.label" uid="5bfe0e67-fb3e-49db-a10e-7b62c4d44aed" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="true"
+                label="%stereotype.Problem.label"
+                metaclass="Standard.Class" name="Problem"
+                owner-stereotype="" uid="5bfe0e67-fb3e-49db-a10e-7b62c4d44aed">
                 <Icon path=""/>
                 <Image path=""/>
                 <TagTypes>
-                    <TagType name="maxSteps" uid="664ec57a-18d2-485f-be50-e480e4b7c530" label="%tagtype.maxSteps.label" parameter-card="1" is-hidden="true" is-signed="true"/>
-                    <TagType name="name" uid="2a0aac55-08e8-41f2-aadf-3f6f20ffafb6" label="%tagtype.name.label" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="numEvaluations" uid="20c47eda-b426-4986-bd63-940083400422" label="%tagtype.numEvaluations.label" parameter-card="1" is-hidden="false" is-signed="false"/>
-                    <TagType name="seed" uid="f26564b3-a099-4ce4-a6bf-560a2b4f9219" label="%tagtype.seed.label" parameter-card="1" is-hidden="false" is-signed="false"/>
+                    <TagType is-hidden="true" is-signed="true"
+                        label="%tagtype.maxSteps.label" name="maxSteps"
+                        parameter-card="1" uid="664ec57a-18d2-485f-be50-e480e4b7c530"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.name.label" name="name"
+                        parameter-card="1" uid="2a0aac55-08e8-41f2-aadf-3f6f20ffafb6"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.numEvaluations.label"
+                        name="numEvaluations" parameter-card="1" uid="20c47eda-b426-4986-bd63-940083400422"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.seed.label" name="seed"
+                        parameter-card="1" uid="f26564b3-a099-4ce4-a6bf-560a2b4f9219"/>
                 </TagTypes>
             </Stereotype>
-            <Stereotype name="RoSAlgorithm" metaclass="Standard.Operation" owner-stereotype="mref#'' {9bc957f8-c99e-4977-97ea-f33bbcc766f8} Infrastructure.Stereotype" is-hidden="true" label="%stereotype.RoSAlgorithm.label" uid="792ec7b4-e211-4544-bf4a-244e9d0ca6b0" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="true"
+                label="%stereotype.RoSAlgorithm.label"
+                metaclass="Standard.Operation" name="RoSAlgorithm"
+                owner-stereotype="mref#'' {9bc957f8-c99e-4977-97ea-f33bbcc766f8} Infrastructure.Stereotype" uid="792ec7b4-e211-4544-bf4a-244e9d0ca6b0">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="ROSBehavior" metaclass="Standard.Operation" owner-stereotype="" is-hidden="true" label="%stereotype.ROSBehavior.label" uid="9bc957f8-c99e-4977-97ea-f33bbcc766f8" is-abstract="true">
+            <Stereotype is-abstract="true" is-hidden="true"
+                label="%stereotype.ROSBehavior.label"
+                metaclass="Standard.Operation" name="ROSBehavior"
+                owner-stereotype="" uid="9bc957f8-c99e-4977-97ea-f33bbcc766f8">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="RoSAbstraction" metaclass="Standard.Operation" owner-stereotype="mref#'' {9bc957f8-c99e-4977-97ea-f33bbcc766f8} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.RoSAbstraction.label" uid="dfc6ccfa-e9e6-490c-bdc5-a70f289fc1c8" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.RoSAbstraction.label"
+                metaclass="Standard.Operation" name="RoSAbstraction"
+                owner-stereotype="mref#'' {9bc957f8-c99e-4977-97ea-f33bbcc766f8} Infrastructure.Stereotype" uid="dfc6ccfa-e9e6-490c-bdc5-a70f289fc1c8">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Sensor" metaclass="Standard.Class" owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Sensor.label" uid="0cc49982-e520-401e-91b9-49354b24e208" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Sensor.label"
+                metaclass="Standard.Class" name="Sensor"
+                owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" uid="0cc49982-e520-401e-91b9-49354b24e208">
                 <Icon path="res/icon/gui/sensor.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Swarm" metaclass="Standard.Class" owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Swarm.label" uid="b7712590-a4be-4290-b91e-1e8e27d8005c" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Swarm.label"
+                metaclass="Standard.Class" name="Swarm"
+                owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" uid="b7712590-a4be-4290-b91e-1e8e27d8005c">
                 <Icon path="res/icon/gui/swarm.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="SwarmMember" metaclass="Standard.Class" owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.SwarmMember.label" uid="716ed069-c82d-4d0e-a2c8-c19ca8eeb165" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.SwarmMember.label"
+                metaclass="Standard.Class" name="SwarmMember"
+                owner-stereotype="mref#'Block' {00bc42a4-0000-19c9-0000-000000000000} Infrastructure.Stereotype" uid="716ed069-c82d-4d0e-a2c8-c19ca8eeb165">
                 <Icon path="res/icon/gui/swarmmember.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Virtual" metaclass="Standard.Class" owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" is-hidden="false" label="%stereotype.Virtual.label" uid="bd764e2a-af34-4cf3-a783-cb467d8753e7" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Virtual.label"
+                metaclass="Standard.Class" name="Virtual"
+                owner-stereotype="mref#'' {ded65f03-9b1f-4279-82e7-4b2d4023ec0e} Infrastructure.Stereotype" uid="bd764e2a-af34-4cf3-a783-cb467d8753e7">
                 <Icon path="res/icon/gui/virtual.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Topic" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.Topic.label" uid="8029f5c0-1f69-4fc0-abc6-705d4692a835" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Topic.label"
+                metaclass="Standard.Package" name="Topic"
+                owner-stereotype="" uid="8029f5c0-1f69-4fc0-abc6-705d4692a835">
                 <Icon path="res/icon/gui/ROSTopic.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Msg" metaclass="Standard.DataType" owner-stereotype="" is-hidden="false" label="%stereotype.Msg.label" uid="6ea5e07b-9366-4d20-b4e8-520d6d72a71e" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Msg.label"
+                metaclass="Standard.DataType" name="Msg"
+                owner-stereotype="" uid="6ea5e07b-9366-4d20-b4e8-520d6d72a71e">
                 <Icon path="res/icon/gui/ROSMessage.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="ROSPackage" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.ROSPackage.label" uid="70829b13-2ad6-4af3-ad17-a16be6c1ad1b" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.ROSPackage.label"
+                metaclass="Standard.Package" name="ROSPackage"
+                owner-stereotype="" uid="70829b13-2ad6-4af3-ad17-a16be6c1ad1b">
                 <Icon path="res/icon/gui/ROSPackage.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="ROSMonitoring" metaclass="Standard.State" owner-stereotype="" is-hidden="false" label="%stereotype.ROSMonitoring.label" uid="9d48fdd3-fa47-4913-a877-0352effb9438" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.ROSMonitoring.label"
+                metaclass="Standard.State" name="ROSMonitoring"
+                owner-stereotype="" uid="9d48fdd3-fa47-4913-a877-0352effb9438">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="ROSComponent" metaclass="Standard.Component" owner-stereotype="" is-hidden="false" label="%stereotype.ROSComponent.label" uid="29dfda8e-6dff-4e42-8b00-a1c9d874a911" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.ROSComponent.label"
+                metaclass="Standard.Component" name="ROSComponent"
+                owner-stereotype="" uid="29dfda8e-6dff-4e42-8b00-a1c9d874a911">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="DepTopic" metaclass="Infrastructure.Dependency" owner-stereotype="" is-hidden="false" label="%stereotype.DepTopic.label" uid="7a93e4a6-bc97-4e2d-9f1c-817a97006912" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.DepTopic.label"
+                metaclass="Infrastructure.Dependency" name="DepTopic"
+                owner-stereotype="" uid="7a93e4a6-bc97-4e2d-9f1c-817a97006912">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="DepMsg" metaclass="Infrastructure.Dependency" owner-stereotype="" is-hidden="false" label="%stereotype.DepMsg.label" uid="21e11c33-b511-47d5-9375-6e859480aba4" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.DepMsg.label"
+                metaclass="Infrastructure.Dependency" name="DepMsg"
+                owner-stereotype="" uid="21e11c33-b511-47d5-9375-6e859480aba4">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="DepPort" metaclass="Infrastructure.Dependency" owner-stereotype="" is-hidden="false" label="%stereotype.DepPort.label" uid="ae2a993a-af56-4f02-81a7-e01dac2e1a72" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.DepPort.label"
+                metaclass="Infrastructure.Dependency" name="DepPort"
+                owner-stereotype="" uid="ae2a993a-af56-4f02-81a7-e01dac2e1a72">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="ROSAction" metaclass="Standard.Interface" owner-stereotype="" is-hidden="false" label="%stereotype.ROSAction.label" uid="3331baf8-fec8-4148-ac72-4715a265aa18" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.ROSAction.label"
+                metaclass="Standard.Interface" name="ROSAction"
+                owner-stereotype="" uid="3331baf8-fec8-4148-ac72-4715a265aa18">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="ROSService" metaclass="Standard.Interface" owner-stereotype="" is-hidden="false" label="%stereotype.ROSService.label" uid="e4459638-1dee-4e15-bb1c-b98cddf4edab" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.ROSService.label"
+                metaclass="Standard.Interface" name="ROSService"
+                owner-stereotype="" uid="e4459638-1dee-4e15-bb1c-b98cddf4edab">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="GOAL" metaclass="Standard.Attribute" owner-stereotype="" is-hidden="false" label="%stereotype.GOAL.label" uid="17496ef0-8203-4732-8a12-74a436c1198f" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.GOAL.label"
+                metaclass="Standard.Attribute" name="GOAL"
+                owner-stereotype="" uid="17496ef0-8203-4732-8a12-74a436c1198f">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="RESULT" metaclass="Standard.Attribute" owner-stereotype="" is-hidden="false" label="%stereotype.RESULT.label" uid="de05dfa4-5538-4a5e-b96f-9b2107ea3994" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.RESULT.label"
+                metaclass="Standard.Attribute" name="RESULT"
+                owner-stereotype="" uid="de05dfa4-5538-4a5e-b96f-9b2107ea3994">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="DepCommModel" metaclass="Infrastructure.Dependency" owner-stereotype="" is-hidden="false" label="%stereotype.DepCommModel.label" uid="d0e49f00-ab0d-4197-a024-6939bd1825ff" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.DepCommModel.label"
+                metaclass="Infrastructure.Dependency"
+                name="DepCommModel" owner-stereotype="" uid="d0e49f00-ab0d-4197-a024-6939bd1825ff">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Mapped" metaclass="Standard.InternalTransition" owner-stereotype="" is-hidden="false" label="%stereotype.Mapped.label" uid="27c0b9bb-b173-4a80-8712-1daa12b7736f" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Mapped.label"
+                metaclass="Standard.InternalTransition" name="Mapped"
+                owner-stereotype="" uid="27c0b9bb-b173-4a80-8712-1daa12b7736f">
                 <Icon path=""/>
                 <Image path=""/>
                 <TagTypes>
-                    <TagType name="Mapping" uid="346728a9-a878-439d-8edb-a6216fadf8da" label="%tagtype.Mapping.label" parameter-card="*" is-hidden="false" is-signed="false"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.Mapping.label" name="Mapping"
+                        parameter-card="*" uid="346728a9-a878-439d-8edb-a6216fadf8da"/>
                 </TagTypes>
             </Stereotype>
-            <MetaclassReference uid="3ad66167-c758-456c-90af-81eb4c2d51fd" metaclass="Standard.InternalTransition">
+            <MetaclassReference metaclass="Standard.InternalTransition" uid="3ad66167-c758-456c-90af-81eb4c2d51fd">
                 <TagTypes>
-                    <TagType name="mapping" uid="6b4d4bd7-e6ac-4b50-be9c-711113373505" label="%tagtype.mapping.label" parameter-card="*" is-hidden="false" is-signed="false"/>
+                    <TagType is-hidden="false" is-signed="false"
+                        label="%tagtype.mapping.label" name="mapping"
+                        parameter-card="*" uid="6b4d4bd7-e6ac-4b50-be9c-711113373505"/>
                 </TagTypes>
             </MetaclassReference>
         </Profile>
-        <Profile uid="8e8834de-b0af-4b68-8350-7eca4cf46118" id="CPSwarm.diagram">
-            <Stereotype name="BehaviorDiagram" metaclass="Standard.StateMachineDiagram" owner-stereotype="" is-hidden="false" label="%stereotype.BehaviorDiagram.label" uid="9f47abac-02a3-4be2-b622-f63ca2351668" is-abstract="false">
+        <Profile id="CPSwarm.diagram" uid="8e8834de-b0af-4b68-8350-7eca4cf46118">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.BehaviorDiagram.label"
+                metaclass="Standard.StateMachineDiagram"
+                name="BehaviorDiagram" owner-stereotype="" uid="9f47abac-02a3-4be2-b622-f63ca2351668">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="SwarmCompositionDiagram" metaclass="Standard.ClassDiagram" owner-stereotype="" is-hidden="false" label="%stereotype.SwarmCompositionDiagram.label" uid="752d7c8e-31b3-4e6e-ba3c-16ebd3834892" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.SwarmCompositionDiagram.label"
+                metaclass="Standard.ClassDiagram"
+                name="SwarmCompositionDiagram" owner-stereotype="" uid="752d7c8e-31b3-4e6e-ba3c-16ebd3834892">
                 <Icon path="res/icon/gui/swarmcompositiondiagram.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="SwarmBlockDiagram" metaclass="Standard.ClassDiagram" owner-stereotype="" is-hidden="false" label="%stereotype.SwarmBlockDiagram.label" uid="cad88314-8a9d-4eec-b2bc-6b00f4a4ff40" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.SwarmBlockDiagram.label"
+                metaclass="Standard.ClassDiagram"
+                name="SwarmBlockDiagram" owner-stereotype="" uid="cad88314-8a9d-4eec-b2bc-6b00f4a4ff40">
                 <Icon path="res/icon/gui/swarmblockdiagram.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="InternalSwarmMemberDiagram" metaclass="Standard.ClassDiagram" owner-stereotype="" is-hidden="false" label="%stereotype.InternalSwarmMemberDiagram.label" uid="8f3c3a83-4ce5-4895-9c1e-c79618c94085" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.InternalSwarmMemberDiagram.label"
+                metaclass="Standard.ClassDiagram"
+                name="InternalSwarmMemberDiagram" owner-stereotype="" uid="8f3c3a83-4ce5-4895-9c1e-c79618c94085">
                 <Icon path="res/icon/gui/swarmmemberdiagram.png"/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="FitnessDefinitionDiagram" metaclass="Standard.ClassDiagram" owner-stereotype="" is-hidden="false" label="%stereotype.FitnessDefinitionDiagram.label" uid="8031ba42-b3e3-4930-9600-9b8f2ead875e" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.FitnessDefinitionDiagram.label"
+                metaclass="Standard.ClassDiagram"
+                name="FitnessDefinitionDiagram" owner-stereotype="" uid="8031ba42-b3e3-4930-9600-9b8f2ead875e">
                 <Icon path="res/icon/gui/fitnessdiagram.png"/>
                 <Image path=""/>
             </Stereotype>
         </Profile>
-        <Profile uid="c7d29857-1c3d-4f5c-9ed3-66ee5ca6a33a" id="CPSwarm.sdf">
-            <Stereotype name="World" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.World.label" uid="74644671-e0b4-4787-8aba-ba84f5a00a4c" is-abstract="false">
+        <Profile id="CPSwarm.sdf" uid="c7d29857-1c3d-4f5c-9ed3-66ee5ca6a33a">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.World.label"
+                metaclass="Standard.Package" name="World"
+                owner-stereotype="" uid="74644671-e0b4-4787-8aba-ba84f5a00a4c">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="SDFRoot" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.SDFRoot.label" uid="2e502060-b638-4009-9e0d-0185890bfec1" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.SDFRoot.label"
+                metaclass="Standard.Package" name="SDFRoot"
+                owner-stereotype="" uid="2e502060-b638-4009-9e0d-0185890bfec1">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
-            <Stereotype name="Model" metaclass="Standard.Package" owner-stereotype="" is-hidden="false" label="%stereotype.Model.label" uid="5f61a402-9917-475e-b236-e15462182576" is-abstract="false">
+            <Stereotype is-abstract="false" is-hidden="false"
+                label="%stereotype.Model.label"
+                metaclass="Standard.Package" name="Model"
+                owner-stereotype="" uid="5f61a402-9917-475e-b236-e15462182576">
                 <Icon path=""/>
                 <Image path=""/>
             </Stereotype>
         </Profile>
     </Profiles>
     <Gui>
+        <ContextualMenu>
+            <CommandRef group="" group-image="" refid="Framework_Explorer_Command"/>
+            <CommandRef group="%group.Import/Export.label"
+                group-image="res/icon/gui/importexport.png" refid="ADFImport"/>
+            <CommandRef group="%group.Import/Export.label"
+                group-image="res/icon/gui/importexport.png" refid="ADFExport"/>
+            <CommandRef group="%group.Import/Export.label"
+                group-image="res/icon/gui/importexport.png" refid="SCXMLGeneration"/>
+            <CommandRef group="%group.Import/Export.label"
+                group-image="res/icon/gui/importexport.png" refid="Communication_Configuration_Generation"/>
+            <CommandRef group="%group.Import/Export.label"
+                group-image="res/icon/gui/importexport.png" refid="Fitness_Function_Generation"/>
+            <CommandRef group="%group.Import/Export.label"
+                group-image="res/icon/gui/importexport.png" refid="Optimisation_Parameters_Export"/>
+            <CommandRef group="%group.Wizards.label"
+                group-image="res/icon/gui/cpswarmwizard.png" refid="Swarm_Wizard"/>
+            <CommandRef group="%group.Wizards.label"
+                group-image="res/icon/gui/cpswarmwizard.png" refid="Component_Wizard"/>
+            <CommandRef group="%group.Diagrams.label"
+                group-image="res/icon/gui/swarmmemberdiagram.png" refid="Behavior_Diagram"/>
+            <CommandRef group="%group.Diagrams.label"
+                group-image="res/icon/gui/swarmmemberdiagram.png" refid="Swarm_Composition_Diagram"/>
+            <CommandRef group="%group.Diagrams.label"
+                group-image="res/icon/gui/swarmmemberdiagram.png" refid="InternalSwarmMemberDiagram"/>
+            <CommandRef group="%group.Diagrams.label"
+                group-image="res/icon/gui/swarmmemberdiagram.png" refid="Swarm_Block_Diagram"/>
+            <CommandRef group="%group.Diagrams.label"
+                group-image="res/icon/gui/swarmmemberdiagram.png" refid="Fitness_Function_Diagram"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Actuator"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Controller"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Fitness_Function"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Sensor"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Swarm"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Swarm_Member"/>
+            <CommandRef group="%group.Elements.label"
+                group-image="res/icon/gui/swarmmember.png" refid="Virtual"/>
+        </ContextualMenu>
         <Commands>
-            <Command id="ADFImport" label="%command.ADFImport.label" tooltip="%command.ADFImport.tooltip" image="res/icon/gui/abstractionimport.png" modify-model="false">
+            <Command id="ADFImport"
+                image="res/icon/gui/abstractionimport.png"
+                label="%command.ADFImport.label" modify-model="false" tooltip="%command.ADFImport.tooltip">
                 <Scope metaclass="Standard.NameSpace" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.ADFImportCommand">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="ADFExport" label="%command.ADFExport.label" tooltip="%command.ADFExport.tooltip" image="res/icon/gui/abstractionexport.png" modify-model="false">
+            <Command id="ADFExport"
+                image="res/icon/gui/abstractionexport.png"
+                label="%command.ADFExport.label" modify-model="false" tooltip="%command.ADFExport.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#Virtual"/>
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#Sensor"/>
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#Actuator"/>
@@ -240,7 +431,8 @@
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="Actuator" label="%command.Actuator.label" tooltip="%command.Actuator.tooltip" image="res/icon/gui/actuator.png" modify-model="false">
+            <Command id="Actuator" image="res/icon/gui/actuator.png"
+                label="%command.Actuator.label" modify-model="false" tooltip="%command.Actuator.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="ElementCreate">
                     <HParameter name="stereotype" value="CPSwarm#Actuator"/>
@@ -248,29 +440,40 @@
                     <HParameter name="name" value="Actuator"/>
                 </Handler>
             </Command>
-            <Command id="Behavior_Diagram" label="%command.Behavior_Diagram.label" tooltip="%command.Behavior_Diagram.tooltip" image="res/icon/gui/swarmbehaviordiagram.png" modify-model="true">
+            <Command id="Behavior_Diagram"
+                image="res/icon/gui/swarmbehaviordiagram.png"
+                label="%command.Behavior_Diagram.label"
+                modify-model="true" tooltip="%command.Behavior_Diagram.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#Controller"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.diagram.command.BehaviorDefinitionDiagram">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="CPDT" label="%command.CPDT.label" tooltip="%command.CPDT.tooltip" image="res/icon/gui/cpdt.png" modify-model="true">
+            <Command id="CPDT" image="res/icon/gui/cpdt.png"
+                label="%command.CPDT.label" modify-model="true" tooltip="%command.CPDT.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.CPDTCommand">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="Communication_Configuration_Generation" label="%command.Communication_Configuration_Generation.label" tooltip="%command.Communication_Configuration_Generation.tooltip" image="res/icon/gui/communicationexport.png" modify-model="true">
+            <Command id="Communication_Configuration_Generation"
+                image="res/icon/gui/communicationexport.png"
+                label="%command.Communication_Configuration_Generation.label"
+                modify-model="true" tooltip="%command.Communication_Configuration_Generation.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#SwarmMember"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.CommunicationGeneration">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="Component_Wizard" label="%command.Component_Wizard.label" tooltip="%command.Component_Wizard.tooltip" image="res/icon/gui/create_component_wizard.png" modify-model="false">
+            <Command id="Component_Wizard"
+                image="res/icon/gui/create_component_wizard.png"
+                label="%command.Component_Wizard.label"
+                modify-model="false" tooltip="%command.Component_Wizard.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.ComponentWizardCommand"/>
             </Command>
-            <Command id="Controller" label="%command.Controller.label" tooltip="%command.Controller.tooltip" image="res/icon/gui/controller.png" modify-model="false">
+            <Command id="Controller" image="res/icon/gui/controller.png"
+                label="%command.Controller.label" modify-model="false" tooltip="%command.Controller.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="ElementCreate">
                     <HParameter name="stereotype" value="CPSwarm#Controller"/>
@@ -278,24 +481,32 @@
                     <HParameter name="name" value="Controller"/>
                 </Handler>
             </Command>
-            <Command id="Event" label="%command.Event.label" tooltip="%command.Event.tooltip" image="res/icon/gui/standard.event.png" modify-model="false">
+            <Command id="Event" image="res/icon/gui/standard.event.png"
+                label="%command.Event.label" modify-model="false" tooltip="%command.Event.tooltip">
                 <Scope metaclass="Standard.Transition" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.Event">
                     <HParameter name="metaclass" value="Standard.Event"/>
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="Fitness_Function" label="%command.Fitness_Function.label" tooltip="%command.Fitness_Function.tooltip" image="res/icon/gui/fitnessfunction.png" modify-model="false">
+            <Command id="Fitness_Function"
+                image="res/icon/gui/fitnessfunction.png"
+                label="%command.Fitness_Function.label"
+                modify-model="false" tooltip="%command.Fitness_Function.tooltip">
                 <Scope metaclass="Standard.Package" stereotype="CPSwarm#FitnessDefinition"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.FitnessFunction">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="SCXMLGeneration" label="%command.SCXMLGeneration.label" tooltip="%command.SCXMLGeneration.tooltip" image="res/icon/gui/scxmlexport.png" modify-model="true">
+            <Command id="SCXMLGeneration"
+                image="res/icon/gui/scxmlexport.png"
+                label="%command.SCXMLGeneration.label"
+                modify-model="true" tooltip="%command.SCXMLGeneration.tooltip">
                 <Scope metaclass="Standard.StateMachine" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.SCXMLGeneration"/>
             </Command>
-            <Command id="Sensor" label="%command.Sensor.label" tooltip="%command.Sensor.tooltip" image="res/icon/gui/sensor.png" modify-model="false">
+            <Command id="Sensor" image="res/icon/gui/sensor.png"
+                label="%command.Sensor.label" modify-model="false" tooltip="%command.Sensor.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="ElementCreate">
                     <HParameter name="stereotype" value="CPSwarm#Sensor"/>
@@ -303,7 +514,8 @@
                     <HParameter name="name" value="Sensor"/>
                 </Handler>
             </Command>
-            <Command id="Swarm" label="%command.Swarm.label" tooltip="%command.Swarm.tooltip" image="res/icon/gui/swarm.png" modify-model="false">
+            <Command id="Swarm" image="res/icon/gui/swarm.png"
+                label="%command.Swarm.label" modify-model="false" tooltip="%command.Swarm.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="ElementCreate">
                     <HParameter name="stereotype" value="CPSwarm#Swarm"/>
@@ -311,7 +523,10 @@
                     <HParameter name="name" value="Swarm"/>
                 </Handler>
             </Command>
-            <Command id="Swarm_Block_Diagram" label="%command.Swarm_Block_Diagram.label" tooltip="%command.Swarm_Block_Diagram.tooltip" image="res/icon/gui/swarmblockdiagram.png" modify-model="false">
+            <Command id="Swarm_Block_Diagram"
+                image="res/icon/gui/swarmblockdiagram.png"
+                label="%command.Swarm_Block_Diagram.label"
+                modify-model="false" tooltip="%command.Swarm_Block_Diagram.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.SwarmBlockDiagram">
                     <HParameter name="name" value="Diagram"/>
@@ -320,7 +535,10 @@
                     <HParameter name="style" value="cpswarm"/>
                 </Handler>
             </Command>
-            <Command id="Swarm_Composition_Diagram" label="%command.Swarm_Composition_Diagram.label" tooltip="%command.Swarm_Composition_Diagram.tooltip" image="res/icon/gui/swarmcompositiondiagram.png" modify-model="false">
+            <Command id="Swarm_Composition_Diagram"
+                image="res/icon/gui/swarmcompositiondiagram.png"
+                label="%command.Swarm_Composition_Diagram.label"
+                modify-model="false" tooltip="%command.Swarm_Composition_Diagram.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.SwarmArchitectureDiagram">
                     <HParameter name="name" value="Diagram"/>
@@ -329,17 +547,25 @@
                     <HParameter name="style" value="cpswarm"/>
                 </Handler>
             </Command>
-            <Command id="Swarm_Composition_Generation" label="%command.Swarm_Composition_Generation.label" tooltip="%command.Swarm_Composition_Generation.tooltip" image="res/icon/gui/swarmcompositionexport.png" modify-model="true">
+            <Command id="Swarm_Composition_Generation"
+                image="res/icon/gui/swarmcompositionexport.png"
+                label="%command.Swarm_Composition_Generation.label"
+                modify-model="true" tooltip="%command.Swarm_Composition_Generation.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#Swarm"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.SwarmCompositionGeneration">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="InternalSwarmMemberDiagram" label="%command.InternalSwarmMemberDiagram.label" tooltip="%command.InternalSwarmMemberDiagram.tooltip" image="res/icon/gui/swarmmemberdiagram.png" modify-model="false">
+            <Command id="InternalSwarmMemberDiagram"
+                image="res/icon/gui/swarmmemberdiagram.png"
+                label="%command.InternalSwarmMemberDiagram.label"
+                modify-model="false" tooltip="%command.InternalSwarmMemberDiagram.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#SwarmMember"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.diagram.command.InternalSwarmMemberDiagram"/>
             </Command>
-            <Command id="Swarm_Member" label="%command.Swarm_Member.label" tooltip="%command.Swarm_Member.tooltip" image="res/icon/gui/swarmmember.png" modify-model="false">
+            <Command id="Swarm_Member"
+                image="res/icon/gui/swarmmember.png"
+                label="%command.Swarm_Member.label" modify-model="false" tooltip="%command.Swarm_Member.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="ElementCreate">
                     <HParameter name="stereotype" value="CPSwarm#SwarmMember"/>
@@ -347,13 +573,16 @@
                     <HParameter name="name" value="Swarm Member"/>
                 </Handler>
             </Command>
-            <Command id="Swarm_Wizard" label="%command.Swarm_Wizard.label" tooltip="%command.Swarm_Wizard.tooltip" image="res/icon/gui/create_new_Swarm_Composition_Diagram.png" modify-model="true">
+            <Command id="Swarm_Wizard"
+                image="res/icon/gui/create_new_Swarm_Composition_Diagram.png"
+                label="%command.Swarm_Wizard.label" modify-model="true" tooltip="%command.Swarm_Wizard.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.SwarmWizardCommand">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="Virtual" label="%command.Virtual.label" tooltip="%command.Virtual.tooltip" image="res/icon/gui/virtual.png" modify-model="false">
+            <Command id="Virtual" image="res/icon/gui/virtual.png"
+                label="%command.Virtual.label" modify-model="false" tooltip="%command.Virtual.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="ElementCreate">
                     <HParameter name="stereotype" value="CPSwarm#Virtual"/>
@@ -361,7 +590,10 @@
                     <HParameter name="name" value="Virtual"/>
                 </Handler>
             </Command>
-            <Command id="Fitness_Function_Diagram" label="%command.Fitness_Function_Diagram.label" tooltip="%command.Fitness_Function_Diagram.tooltip" image="res/icon/gui/fitnessdiagram.png" modify-model="false">
+            <Command id="Fitness_Function_Diagram"
+                image="res/icon/gui/fitnessdiagram.png"
+                label="%command.Fitness_Function_Diagram.label"
+                modify-model="false" tooltip="%command.Fitness_Function_Diagram.tooltip">
                 <Scope metaclass="Standard.Package" stereotype="CPSwarm#FitnessDefinition"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.FitnessFunctionDiagram">
                     <HParameter name="name" value="Diagram"/>
@@ -370,167 +602,49 @@
                     <HParameter name="style" value="cpswarm"/>
                 </Handler>
             </Command>
-            <Command id="Framework_Explorer_Command" label="%command.Framework_Explorer_Command.label" tooltip="%command.Framework_Explorer_Command.tooltip" image="res/icon/gui/frameworkcpswarm.png" modify-model="true">
+            <Command id="Framework_Explorer_Command"
+                image="res/icon/gui/frameworkcpswarm.png"
+                label="%command.Framework_Explorer_Command.label"
+                modify-model="true" tooltip="%command.Framework_Explorer_Command.tooltip">
                 <Scope metaclass="Standard.Package" stereotype=""/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.DeployFrameworkCommand">
                     <HParameter name="patternPath" value="res/generated/patterns/framework.umlt"/>
                 </Handler>
             </Command>
-            <Command id="Fitness_Function_Generation" label="%command.Fitness_Function_Generation.label" tooltip="%command.Fitness_Function_Generation.tooltip" image="res/icon/gui/fitnessexport.png" modify-model="true">
+            <Command id="Fitness_Function_Generation"
+                image="res/icon/gui/fitnessexport.png"
+                label="%command.Fitness_Function_Generation.label"
+                modify-model="true" tooltip="%command.Fitness_Function_Generation.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#FitnessFunction"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.FitnessFunctionGeneration">
                     <HParameter name="name" value=""/>
                 </Handler>
             </Command>
-            <Command id="Optimisation_Parameters_Export" label="%command.Optimisation_Parameters_Export.label" tooltip="%command.Optimisation_Parameters_Export.tooltip" image="res/icon/gui/paramexport.png" modify-model="false">
+            <Command id="Optimisation_Parameters_Export"
+                image="res/icon/gui/paramexport.png"
+                label="%command.Optimisation_Parameters_Export.label"
+                modify-model="false" tooltip="%command.Optimisation_Parameters_Export.tooltip">
                 <Scope metaclass="Standard.Class" stereotype="CPSwarm#FitnessFunction"/>
                 <Handler class="org.modelio.module.cpswarm.command.explorer.ParamExportCommand"/>
             </Command>
         </Commands>
-        <Tools>
-            <Tool id="Swarm" label="%tool.Swarm.label" tooltip="%tool.Swarm.tooltip" image="res/icon/gui/swarm.png">
-                <Scope-source metaclass="Standard.Package" stereotype=""/>
-                <Handler class="Box">
-                    <HParameter name="stereotype" value="CPSwarm#Swarm"/>
-                    <HParameter name="metaclass" value="Standard.Class"/>
-                    <HParameter name="name" value="Swarm"/>
-                </Handler>
-            </Tool>
-            <Tool id="Swarm_Member" label="%tool.Swarm_Member.label" tooltip="%tool.Swarm_Member.tooltip" image="res/icon/gui/swarmmember.png">
-                <Scope-source metaclass="Standard.NameSpace" stereotype=""/>
-                <Handler class="Box">
-                    <HParameter name="stereotype" value="CPSwarm#SwarmMember"/>
-                    <HParameter name="metaclass" value="Standard.Class"/>
-                    <HParameter name="name" value="Swarm Member"/>
-                </Handler>
-            </Tool>
-            <Tool id="Controller" label="%tool.Controller.label" tooltip="%tool.Controller.tooltip" image="res/icon/gui/controller.png">
-                <Scope-source metaclass="Standard.Package" stereotype=""/>
-                <Handler class="Box">
-                    <HParameter name="stereotype" value="CPSwarm#Controller"/>
-                    <HParameter name="metaclass" value="Standard.Class"/>
-                    <HParameter name="name" value="Controller"/>
-                </Handler>
-            </Tool>
-            <Tool id="Sensor" label="%tool.Sensor.label" tooltip="%tool.Sensor.tooltip" image="res/icon/gui/sensor.png">
-                <Scope-source metaclass="Standard.Package" stereotype=""/>
-                <Handler class="Box">
-                    <HParameter name="stereotype" value="CPSwarm#Sensor"/>
-                    <HParameter name="metaclass" value="Standard.Class"/>
-                    <HParameter name="name" value="Sensor"/>
-                </Handler>
-            </Tool>
-            <Tool id="Actuator" label="%tool.Actuator.label" tooltip="%tool.Actuator.tooltip" image="res/icon/gui/actuator.png">
-                <Scope-source metaclass="Standard.Package" stereotype=""/>
-                <Handler class="Box">
-                    <HParameter name="stereotype" value="CPSwarm#Actuator"/>
-                    <HParameter name="metaclass" value="Standard.Class"/>
-                    <HParameter name="name" value="Actuator"/>
-                </Handler>
-            </Tool>
-            <Tool id="Port_In" label="%tool.Port_In.label" tooltip="%tool.Port_In.tooltip" image="res/icon/gui/flowport_in.png">
-                <Scope-source metaclass="Standard.Class" stereotype=""/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.PortInTool">
-                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
-                    <HParameter name="metaclass" value="Standard.Port"/>
-                    <HParameter name="name" value="p"/>
-                </Handler>
-            </Tool>
-            <Tool id="PortOut" label="%tool.PortOut.label" tooltip="%tool.PortOut.tooltip" image="res/icon/gui/flowport_out.png">
-                <Scope-source metaclass="Standard.Class" stereotype=""/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.PortOutTool">
-                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
-                    <HParameter name="metaclass" value="Standard.Port"/>
-                    <HParameter name="name" value="p"/>
-                </Handler>
-            </Tool>
-            <Tool id="PortInOut" label="%tool.PortInOut.label" tooltip="%tool.PortInOut.tooltip" image="res/icon/gui/flowport_inout.png">
-                <Scope-source metaclass="Standard.Class" stereotype=""/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.PortInOutTool">
-                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
-                    <HParameter name="metaclass" value="Standard.Port"/>
-                    <HParameter name="name" value="p"/>
-                </Handler>
-            </Tool>
-            <Tool id="PortNone" label="%tool.PortNone.label" tooltip="%tool.PortNone.tooltip" image="res/icon/gui/flowport_none.png">
-                <Scope-source metaclass="Standard.Class" stereotype=""/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.PortNoneTool">
-                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
-                    <HParameter name="metaclass" value="Standard.Port"/>
-                    <HParameter name="name" value="p"/>
-                </Handler>
-            </Tool>
-            <Tool id="UML_Composition" label="%tool.UML_Composition.label" tooltip="%tool.UML_Composition.tooltip" image="res/icon/gui/standard.associationend.composition.png">
-                <Scope-source metaclass="Standard.Class" stereotype="CPSwarm#Swarm"/>
-                <Scope-target metaclass="Standard.Class" stereotype="CPSwarm#SwarmMember"/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.UMLComposition">
-                    <HParameter name="metaclass" value="Standard.AssociationEnd"/>
-                    <HParameter name="name" value=""/>
-                </Handler>
-            </Tool>
-            <Tool id="Virtual" label="%tool.Virtual.label" tooltip="%tool.Virtual.tooltip" image="res/icon/gui/virtual.png">
-                <Scope-source metaclass="Standard.Package" stereotype=""/>
-                <Handler class="Box">
-                    <HParameter name="stereotype" value="CPSwarm#Virtual"/>
-                    <HParameter name="metaclass" value="Standard.Class"/>
-                    <HParameter name="name" value="Virtual"/>
-                </Handler>
-            </Tool>
-            <Tool id="SubStateMachine" label="%tool.SubStateMachine.label" tooltip="%tool.SubStateMachine.tooltip" image="res/icon/gui/statemachine.png">
-                <Scope-source metaclass="Standard.Region" stereotype=""/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.SubMachineTool">
-                    <HParameter name="metaclass" value="Standard.State"/>
-                    <HParameter name="name" value="Element"/>
-                </Handler>
-            </Tool>
-            <Tool id="CPSState" label="%tool.CPSState.label" tooltip="%tool.CPSState.tooltip" image="res/icon/gui/state.png">
-                <Scope-source metaclass="Standard.Region" stereotype=""/>
-                <Handler class="org.modelio.module.cpswarm.command.diagram.StateTool">
-                    <HParameter name="metaclass" value="Standard.State"/>
-                    <HParameter name="name" value="Action"/>
-                </Handler>
-            </Tool>
-        </Tools>
-        <ContextualMenu>
-            <CommandRef refid="Framework_Explorer_Command" group="" group-image=""/>
-            <CommandRef refid="ADFImport" group="%group.Import/Export.label" group-image="res/icon/gui/importexport.png"/>
-            <CommandRef refid="ADFExport" group="%group.Import/Export.label" group-image="res/icon/gui/importexport.png"/>
-            <CommandRef refid="SCXMLGeneration" group="%group.Import/Export.label" group-image="res/icon/gui/importexport.png"/>
-            <CommandRef refid="Communication_Configuration_Generation" group="%group.Import/Export.label" group-image="res/icon/gui/importexport.png"/>
-            <CommandRef refid="Fitness_Function_Generation" group="%group.Import/Export.label" group-image="res/icon/gui/importexport.png"/>
-            <CommandRef refid="Optimisation_Parameters_Export" group="%group.Import/Export.label" group-image="res/icon/gui/importexport.png"/>
-            <CommandRef refid="Swarm_Wizard" group="%group.Wizards.label" group-image="res/icon/gui/cpswarmwizard.png"/>
-            <CommandRef refid="Component_Wizard" group="%group.Wizards.label" group-image="res/icon/gui/cpswarmwizard.png"/>
-            <CommandRef refid="Behavior_Diagram" group="%group.Diagrams.label" group-image="res/icon/gui/swarmmemberdiagram.png"/>
-            <CommandRef refid="Swarm_Composition_Diagram" group="%group.Diagrams.label" group-image="res/icon/gui/swarmmemberdiagram.png"/>
-            <CommandRef refid="InternalSwarmMemberDiagram" group="%group.Diagrams.label" group-image="res/icon/gui/swarmmemberdiagram.png"/>
-            <CommandRef refid="Swarm_Block_Diagram" group="%group.Diagrams.label" group-image="res/icon/gui/swarmmemberdiagram.png"/>
-            <CommandRef refid="Fitness_Function_Diagram" group="%group.Diagrams.label" group-image="res/icon/gui/swarmmemberdiagram.png"/>
-            <CommandRef refid="Actuator" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-            <CommandRef refid="Controller" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-            <CommandRef refid="Fitness_Function" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-            <CommandRef refid="Sensor" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-            <CommandRef refid="Swarm" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-            <CommandRef refid="Swarm_Member" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-            <CommandRef refid="Virtual" group="%group.Elements.label" group-image="res/icon/gui/swarmmember.png"/>
-        </ContextualMenu>
         <Diagrams>
             <DiagramType base-diagram="Standard.StateMachineDiagram" stereotype="CPSwarm#BehaviorDiagram">
                 <Palette keepBasePalette="false">
-                    <ToolRef refid="CREATE_INITIALPSEUDOSTATE" group="%group.Group0.label"/>
-                    <ToolRef refid="CPSState" group="%group.Group0.label"/>
-                    <ToolRef refid="SubStateMachine" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_TRANSITION" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_FORKJOINNODE" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_FINALSTATE" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_NOTE" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_EXTERNDOCUMENT" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_TRACEABILITY" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_RELATED_DIAGRAM_LINK" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_DRAWING_RECTANGLE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_ELLIPSE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_TEXT" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_LINE" group="%group.Free_Drawing.label"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_INITIALPSEUDOSTATE"/>
+                    <ToolRef group="%group.Group0.label" refid="CPSState"/>
+                    <ToolRef group="%group.Group0.label" refid="SubStateMachine"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_TRANSITION"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_FORKJOINNODE"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_FINALSTATE"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_NOTE"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_EXTERNDOCUMENT"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_TRACEABILITY"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_RELATED_DIAGRAM_LINK"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_RECTANGLE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_ELLIPSE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_TEXT"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_LINE"/>
                 </Palette>
                 <Handler class="StandardCustomizer">
                     <HParameter name="stereotype" value="CPSwarm#BehaviorDiagram"/>
@@ -539,17 +653,17 @@
             </DiagramType>
             <DiagramType base-diagram="Standard.ClassDiagram" stereotype="CPSwarm#SwarmCompositionDiagram">
                 <Palette keepBasePalette="false">
-                    <ToolRef refid="Swarm" group="%group.Swarm_Elements.label"/>
-                    <ToolRef refid="Swarm_Member" group="%group.Swarm_Elements.label"/>
-                    <ToolRef refid="UML_Composition" group="%group.Swarm_Elements.label"/>
-                    <ToolRef refid="CREATE_NOTE" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_EXTERNDOCUMENT" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_TRACEABILITY" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_RELATED_DIAGRAM_LINK" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_DRAWING_RECTANGLE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_ELLIPSE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_TEXT" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_LINE" group="%group.Free_Drawing.label"/>
+                    <ToolRef group="%group.Swarm_Elements.label" refid="Swarm"/>
+                    <ToolRef group="%group.Swarm_Elements.label" refid="Swarm_Member"/>
+                    <ToolRef group="%group.Swarm_Elements.label" refid="UML_Composition"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_NOTE"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_EXTERNDOCUMENT"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_TRACEABILITY"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_RELATED_DIAGRAM_LINK"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_RECTANGLE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_ELLIPSE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_TEXT"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_LINE"/>
                 </Palette>
                 <Handler class="StandardCustomizer">
                     <HParameter name="stereotype" value="CPSwarm#SwarmCompositionDiagram"/>
@@ -558,26 +672,26 @@
             </DiagramType>
             <DiagramType base-diagram="Standard.ClassDiagram" stereotype="CPSwarm#SwarmBlockDiagram">
                 <Palette keepBasePalette="false">
-                    <ToolRef refid="Swarm_Member" group="%group.Group0.label"/>
-                    <ToolRef refid="Controller" group="%group.Group0.label"/>
-                    <ToolRef refid="Sensor" group="%group.Group0.label"/>
-                    <ToolRef refid="Actuator" group="%group.Group0.label"/>
-                    <ToolRef refid="Virtual" group="%group.Group0.label"/>
-                    <ToolRef refid="Port_In" group="%group.Group0.label"/>
-                    <ToolRef refid="PortOut" group="%group.Group0.label"/>
-                    <ToolRef refid="PortInOut" group="%group.Group0.label"/>
-                    <ToolRef refid="SysMLValueType" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_ATTRIBUTE" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_OPERATION" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_GENERALIZATION" group="%group.Group0.label"/>
-                    <ToolRef refid="CREATE_NOTE" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_EXTERNDOCUMENT" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_TRACEABILITY" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_RELATED_DIAGRAM_LINK" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_DRAWING_RECTANGLE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_ELLIPSE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_TEXT" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_LINE" group="%group.Free_Drawing.label"/>
+                    <ToolRef group="%group.Group0.label" refid="Swarm_Member"/>
+                    <ToolRef group="%group.Group0.label" refid="Controller"/>
+                    <ToolRef group="%group.Group0.label" refid="Sensor"/>
+                    <ToolRef group="%group.Group0.label" refid="Actuator"/>
+                    <ToolRef group="%group.Group0.label" refid="Virtual"/>
+                    <ToolRef group="%group.Group0.label" refid="Port_In"/>
+                    <ToolRef group="%group.Group0.label" refid="PortOut"/>
+                    <ToolRef group="%group.Group0.label" refid="PortInOut"/>
+                    <ToolRef group="%group.Group0.label" refid="SysMLValueType"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_ATTRIBUTE"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_OPERATION"/>
+                    <ToolRef group="%group.Group0.label" refid="CREATE_GENERALIZATION"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_NOTE"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_EXTERNDOCUMENT"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_TRACEABILITY"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_RELATED_DIAGRAM_LINK"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_RECTANGLE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_ELLIPSE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_TEXT"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_LINE"/>
                 </Palette>
                 <Handler class="StandardCustomizer">
                     <HParameter name="stereotype" value="CPSwarm#SwarmBlockDiagram"/>
@@ -586,16 +700,18 @@
             </DiagramType>
             <DiagramType base-diagram="Standard.ClassDiagram" stereotype="CPSwarm#InternalSwarmMemberDiagram">
                 <Palette keepBasePalette="false">
-                    <ToolRef refid="CREATE_INSTANCE" group="%group.Swarm_Internal_Bloc_Elements.label"/>
-                    <ToolRef refid="CREATE_DELEGATELINK" group="%group.Swarm_Internal_Bloc_Elements.label"/>
-                    <ToolRef refid="CREATE_NOTE" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_EXTERNDOCUMENT" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_TRACEABILITY" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_RELATED_DIAGRAM_LINK" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_DRAWING_RECTANGLE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_ELLIPSE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_TEXT" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_LINE" group="%group.Free_Drawing.label"/>
+                    <ToolRef
+                        group="%group.Swarm_Internal_Bloc_Elements.label" refid="CREATE_INSTANCE"/>
+                    <ToolRef
+                        group="%group.Swarm_Internal_Bloc_Elements.label" refid="CREATE_DELEGATELINK"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_NOTE"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_EXTERNDOCUMENT"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_TRACEABILITY"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_RELATED_DIAGRAM_LINK"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_RECTANGLE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_ELLIPSE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_TEXT"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_LINE"/>
                 </Palette>
                 <Handler class="StandardCustomizer">
                     <HParameter name="stereotype" value="CPSwarm#InternalSwarmMemberDiagram"/>
@@ -604,21 +720,21 @@
             </DiagramType>
             <DiagramType base-diagram="Standard.ClassDiagram" stereotype="CPSwarm#FitnessDefinitionDiagram">
                 <Palette keepBasePalette="false">
-                    <ToolRef refid="SysMLConstraintBlock" group="%group.Fitness.label"/>
-                    <ToolRef refid="SysMLValueType" group="%group.Fitness.label"/>
-                    <ToolRef refid="PortOut" group="%group.Fitness.label"/>
-                    <ToolRef refid="Port_In" group="%group.Fitness.label"/>
-                    <ToolRef refid="CREATE_INSTANCE" group="%group.Fitness.label"/>
-                    <ToolRef refid="CREATE_CONNECTOR" group="%group.Fitness.label"/>
-                    <ToolRef refid="CREATE_CONSTRAINT" group="%group.Fitness.label"/>
-                    <ToolRef refid="CREATE_NOTE" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_EXTERNDOCUMENT" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_TRACEABILITY" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_RELATED_DIAGRAM_LINK" group="%group.Common.label"/>
-                    <ToolRef refid="CREATE_DRAWING_RECTANGLE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_ELLIPSE" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_TEXT" group="%group.Free_Drawing.label"/>
-                    <ToolRef refid="CREATE_DRAWING_LINE" group="%group.Free_Drawing.label"/>
+                    <ToolRef group="%group.Fitness.label" refid="SysMLConstraintBlock"/>
+                    <ToolRef group="%group.Fitness.label" refid="SysMLValueType"/>
+                    <ToolRef group="%group.Fitness.label" refid="PortOut"/>
+                    <ToolRef group="%group.Fitness.label" refid="Port_In"/>
+                    <ToolRef group="%group.Fitness.label" refid="CREATE_INSTANCE"/>
+                    <ToolRef group="%group.Fitness.label" refid="CREATE_CONNECTOR"/>
+                    <ToolRef group="%group.Fitness.label" refid="CREATE_CONSTRAINT"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_NOTE"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_EXTERNDOCUMENT"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_TRACEABILITY"/>
+                    <ToolRef group="%group.Common.label" refid="CREATE_RELATED_DIAGRAM_LINK"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_RECTANGLE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_ELLIPSE"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_TEXT"/>
+                    <ToolRef group="%group.Free_Drawing.label" refid="CREATE_DRAWING_LINE"/>
                 </Palette>
                 <Handler class="StandardCustomizer">
                     <HParameter name="stereotype" value="CPSwarm#FitnessDefinitionDiagram"/>
@@ -626,19 +742,140 @@
                 </Handler>
             </DiagramType>
         </Diagrams>
+        <Tools>
+            <Tool id="Swarm" image="res/icon/gui/swarm.png"
+                label="%tool.Swarm.label" tooltip="%tool.Swarm.tooltip">
+                <Scope-source metaclass="Standard.Package" stereotype=""/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="CPSwarm#Swarm"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Swarm"/>
+                </Handler>
+            </Tool>
+            <Tool id="Swarm_Member" image="res/icon/gui/swarmmember.png"
+                label="%tool.Swarm_Member.label" tooltip="%tool.Swarm_Member.tooltip">
+                <Scope-source metaclass="Standard.NameSpace" stereotype=""/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="CPSwarm#SwarmMember"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Swarm Member"/>
+                </Handler>
+            </Tool>
+            <Tool id="Controller" image="res/icon/gui/controller.png"
+                label="%tool.Controller.label" tooltip="%tool.Controller.tooltip">
+                <Scope-source metaclass="Standard.Package" stereotype=""/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="CPSwarm#Controller"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Controller"/>
+                </Handler>
+            </Tool>
+            <Tool id="Sensor" image="res/icon/gui/sensor.png"
+                label="%tool.Sensor.label" tooltip="%tool.Sensor.tooltip">
+                <Scope-source metaclass="Standard.Package" stereotype=""/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="CPSwarm#Sensor"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Sensor"/>
+                </Handler>
+            </Tool>
+            <Tool id="Actuator" image="res/icon/gui/actuator.png"
+                label="%tool.Actuator.label" tooltip="%tool.Actuator.tooltip">
+                <Scope-source metaclass="Standard.Package" stereotype=""/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="CPSwarm#Actuator"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Actuator"/>
+                </Handler>
+            </Tool>
+            <Tool id="Port_In" image="res/icon/gui/flowport_in.png"
+                label="%tool.Port_In.label" tooltip="%tool.Port_In.tooltip">
+                <Scope-source metaclass="Standard.Class" stereotype=""/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.PortInTool">
+                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
+                    <HParameter name="metaclass" value="Standard.Port"/>
+                    <HParameter name="name" value="p"/>
+                </Handler>
+            </Tool>
+            <Tool id="PortOut" image="res/icon/gui/flowport_out.png"
+                label="%tool.PortOut.label" tooltip="%tool.PortOut.tooltip">
+                <Scope-source metaclass="Standard.Class" stereotype=""/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.PortOutTool">
+                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
+                    <HParameter name="metaclass" value="Standard.Port"/>
+                    <HParameter name="name" value="p"/>
+                </Handler>
+            </Tool>
+            <Tool id="PortInOut" image="res/icon/gui/flowport_inout.png"
+                label="%tool.PortInOut.label" tooltip="%tool.PortInOut.tooltip">
+                <Scope-source metaclass="Standard.Class" stereotype=""/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.PortInOutTool">
+                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
+                    <HParameter name="metaclass" value="Standard.Port"/>
+                    <HParameter name="name" value="p"/>
+                </Handler>
+            </Tool>
+            <Tool id="PortNone" image="res/icon/gui/flowport_none.png"
+                label="%tool.PortNone.label" tooltip="%tool.PortNone.tooltip">
+                <Scope-source metaclass="Standard.Class" stereotype=""/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.PortNoneTool">
+                    <HParameter name="stereotype" value="SysMLArchitect#FlowPort"/>
+                    <HParameter name="metaclass" value="Standard.Port"/>
+                    <HParameter name="name" value="p"/>
+                </Handler>
+            </Tool>
+            <Tool id="UML_Composition"
+                image="res/icon/gui/standard.associationend.composition.png"
+                label="%tool.UML_Composition.label" tooltip="%tool.UML_Composition.tooltip">
+                <Scope-source metaclass="Standard.Class" stereotype="CPSwarm#Swarm"/>
+                <Scope-target metaclass="Standard.Class" stereotype="CPSwarm#SwarmMember"/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.UMLComposition">
+                    <HParameter name="metaclass" value="Standard.AssociationEnd"/>
+                    <HParameter name="name" value=""/>
+                </Handler>
+            </Tool>
+            <Tool id="Virtual" image="res/icon/gui/virtual.png"
+                label="%tool.Virtual.label" tooltip="%tool.Virtual.tooltip">
+                <Scope-source metaclass="Standard.Package" stereotype=""/>
+                <Handler class="Box">
+                    <HParameter name="stereotype" value="CPSwarm#Virtual"/>
+                    <HParameter name="metaclass" value="Standard.Class"/>
+                    <HParameter name="name" value="Virtual"/>
+                </Handler>
+            </Tool>
+            <Tool id="SubStateMachine"
+                image="res/icon/gui/statemachine.png"
+                label="%tool.SubStateMachine.label" tooltip="%tool.SubStateMachine.tooltip">
+                <Scope-source metaclass="Standard.Region" stereotype=""/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.SubMachineTool">
+                    <HParameter name="metaclass" value="Standard.State"/>
+                    <HParameter name="name" value="Element"/>
+                </Handler>
+            </Tool>
+            <Tool id="CPSState" image="res/icon/gui/state.png"
+                label="%tool.CPSState.label" tooltip="%tool.CPSState.tooltip">
+                <Scope-source metaclass="Standard.Region" stereotype=""/>
+                <Handler class="org.modelio.module.cpswarm.command.diagram.StateTool">
+                    <HParameter name="metaclass" value="Standard.State"/>
+                    <HParameter name="name" value="Action"/>
+                </Handler>
+            </Tool>
+        </Tools>
         <Views>
-            <PropertyPage id="CPSwarmPropertyPage" class="org.modelio.module.cpswarm.impl.CPSwarmProperties" label="%propertypage.CPSwarmPropertyPage.label" image="res/icons/cpswarm.png">
-                <CommandRef refid="Event" group="" group-image=""/>
+            <PropertyPage
+                class="org.modelio.module.cpswarm.impl.CPSwarmProperties"
+                id="CPSwarmPropertyPage" image="res/icons/cpswarm.png" label="%propertypage.CPSwarmPropertyPage.label">
+                <CommandRef group="" group-image="" refid="Event"/>
             </PropertyPage>
         </Views>
     </Gui>
-    <Dependencies>
-        <Required name="ModelerModule" version="9.2.00"/>
-        <Required name="SysMLArchitect" version="3.10.00"/>
-    </Dependencies>
     <Resources>
         <Styles>
             <Style id="cpswarm" path="res/generated/styles/cpswarm.style"/>
         </Styles>
     </Resources>
+    <Dependencies>
+        <Required name="ModelerModule" version="9.2.00"/>
+        <Required name="SysMLArchitect" version="3.10.00"/>
+    </Dependencies>
 </Module>
