@@ -1,11 +1,29 @@
-CPSwarm Modeler
-====
-“CPSwarm Modeler” is a Modelio module developed by Softeam that allows Modelio users to CPS swarm diagrams.
+= CPSwarm Modeler
+
+**CPSwarm Modeler** is an Open Source Modelling Tool conceived for designing swarm of  link:https://en.wikipedia.org/wiki/Cyber-physical_system[**Cyber Physical System**]. **CPSwarm Modeler** is deployed as a module in link:https://www.modelio.org/[**Modelio**] modelling environent.
+
+**CPSwarm Modeler** allows users to design both composition of CPS swarm and CPS behaviour. These diagrams are intended for CPS designer.
+
+For more information, visit our link:https://github.com/Modelio-R-D/CPSwarm/wiki[**Wiki**] page.  
+
+image:readme//example.png[]
+        **CPSwarm Environment**
 
 
-CPSwarm Modeler - User Manual
-----
+== **Dependencies**
 
-See the link of the wiki page below.
-[CPSwarm - User Manual](http://forge.modelio.org/projects/http://forge.modelio.org/projects/cpswarm-modelio38-user-manual-english/wiki)
+* link:http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Java 8 JDK] 
+* link:https://github.com/ModelioOpenSource/Modelio/[Modelio 4.1]       
+
+== **Contributing**
+
+Contributions are welcome. 
+Please fork and make your changes. For major changes, please open an issue and discuss it with the other authors.
+
+
+== **Affiliation**
+
+image:readme//cpswarm.png[CPSwarm]
+This module is developed by Softeam R&D Department and this work is supported by the European Commission through the link:https://cpswarm.eu[CPSwarm H2020 project] under grant no. 731946.
+
 
