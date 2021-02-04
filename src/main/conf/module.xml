@@ -2,12 +2,8 @@
 <Module id="${project.name}" class="org.modelio.module.cpswarm.impl.CPSwarmModule" binaryversion="4.1.0" version="${project.version}" schema-level="2" uid="b914be5e-e9d5-4c22-84be-9edec27e429c" author="" image="" url="">
     <ClassPath>
         <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
-        <PathEntry path="lib/jackson-annotations-2.8.7.jar"/>
-        <PathEntry path="lib/commons-collections4-4.1.jar"/>
-        <PathEntry path="lib/jackson-core-2.8.7.jar"/>
         <PathEntry path="lib/xercesImpl-2.12.0.jar"/>
         <PathEntry path="lib/xml-apis-1.4.01.jar"/>
-        <PathEntry path="lib/jackson-databind-2.9.10.7.jar"/>
         <PathEntry path="lib/jdom-1.1.3.jar"/>
         <PathEntry path="lib/jaxen-1.1.jar"/>
         <PathEntry path="lib/dom4j-1.6.1.jar"/>
@@ -16,6 +12,10 @@
         <PathEntry path="lib/xmlParserAPIs-2.6.2.jar"/>
         <PathEntry path="lib/xalan-2.6.0.jar"/>
         <PathEntry path="lib/icu4j-2.6.1.jar"/>
+        <PathEntry path="lib/commons-collections4-4.1.jar"/>
+        <PathEntry path="lib/jackson-databind-2.9.10.7.jar"/>
+        <PathEntry path="lib/jackson-annotations-2.9.10.jar"/>
+        <PathEntry path="lib/jackson-core-2.9.10.jar"/>
     </ClassPath>
     <Profiles>
         <Profile uid="fb99423e-12d3-4505-926b-f150a22ec337" id="CPSwarm.concept">

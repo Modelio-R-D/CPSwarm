@@ -29,12 +29,6 @@
 package org.modelio.module.cpswarm.utils;
 
 import java.io.File;
-import java.io.IOException;
-import org.jdom.Document;
-import org.jdom.JDOMException;
-import org.jdom.input.JDOMParseException;
-import org.jdom.input.SAXBuilder;
-import org.modelio.api.module.IModule;
 import org.modelio.module.cpswarm.impl.CPSwarmModule;
 
 /**
@@ -42,11 +36,8 @@ import org.modelio.module.cpswarm.impl.CPSwarmModule;
  * @author ebrosse
  */
 public class ResourcesManager {
+
     private static final String generatedFolderName = "generated";
-
-    private static final String xmlFolderName = "xml";
-
-    private IModule _mdac;
 
     private static ResourcesManager instance = null;
 
@@ -60,7 +51,7 @@ public class ResourcesManager {
     /**
      * Method getInstance
      * @author ebrosse
-     * 
+     *
      * @return the SysMLResourcesManager instance
      */
     public static ResourcesManager getInstance() {
@@ -70,19 +61,11 @@ public class ResourcesManager {
         return instance;
     }
 
-    /**
-     * This method sets the current module
-     * 
-     * @param module : the current module
-     */
-    public void setJMDAC(IModule module) {
-        this._mdac = module;
-    }
 
     /**
      * Method getImage
      * @author ebrosse
-     * 
+     *
      * @param imageName : the name of the image file
      * @return the complete path of the image file
      */
@@ -102,23 +85,23 @@ public class ResourcesManager {
         return CPSwarmModule.getInstance().getModuleContext().getProjectStructure().getPath() + File.separator + generatedFolderName;
     }
 
-    public Document getXMLDocument(String fileName) {
-        try {
-            SAXBuilder builder = new SAXBuilder();
-            File xmlFile = new File(CPSwarmModule.getInstance().getModuleContext().getConfiguration().getModuleResourcesPath() + File.separator + "res" + File.separator + xmlFolderName + File.separator + fileName);
-            return builder.build(xmlFile);
-        
-        
-        } catch(JDOMParseException e){
-            CPSwarmModule.logService.error(e);
-        }catch (JDOMException e) {
-            CPSwarmModule.logService.error(e);
-        }catch (IOException e) {
-            CPSwarmModule.logService.error(e);
-        }catch (Exception e) {
-            CPSwarmModule.logService.error(e);
-        }
-        return null;
-    }
+//    public Document getXMLDocument(String fileName) {
+//        try {
+//            SAXBuilder builder = new SAXBuilder();
+//            File xmlFile = new File(CPSwarmModule.getInstance().getModuleContext().getConfiguration().getModuleResourcesPath() + File.separator + "res" + File.separator + xmlFolderName + File.separator + fileName);
+//            return builder.build(xmlFile);
+//
+//
+//        } catch(JDOMParseException e){
+//            CPSwarmModule.logService.error(e);
+//        }catch (JDOMException e) {
+//            CPSwarmModule.logService.error(e);
+//        }catch (IOException e) {
+//            CPSwarmModule.logService.error(e);
+//        }catch (Exception e) {
+//            CPSwarmModule.logService.error(e);
+//        }
+//        return null;
+//    }
 
 }

@@ -42,7 +42,7 @@ public class ModelUtils {
 
     /**
      * return the ModelElement target of the FIRST dependency stereotyped stereotypeName  owned by source element
-     * 
+     *
      * @param source : the ModelElement which is the source of the dependency
      * @param stereotypeName : the stereotype name applicable on Dependency Metaclass
      * @return the ModelElement target of the first dependency
@@ -61,13 +61,13 @@ public class ModelUtils {
 
     /**
      * This method returns the list of Classifier associated (sharing an Association) to the given Association
-     * 
+     *
      * @param center : the central association
      * @return the list of associated Association
      */
     public static List<Classifier> getAssociatedClassifier(final Classifier center) {
         List<Classifier> result = new ArrayList<>();
-        
+
         for (AssociationEnd feature : center.getOwnedEnd()){
             AssociationEnd opposite = feature.getOpposite();
             Classifier owner = opposite.getOwner();
@@ -79,7 +79,7 @@ public class ModelUtils {
 
     /**
      * This method test if the Analyst module is already deployed
-     * 
+     *
      * @return true if the Analyst module is deployed
      */
     public static boolean isRequirementDeployed() {
@@ -88,7 +88,7 @@ public class ModelUtils {
 
     /**
      * Allows the tagged value getting
-     * 
+     *
      * @param tagtypeName : tagged value name
      * @param element : owner element
      * @return the tagged value values in a string form
@@ -102,7 +102,7 @@ public class ModelUtils {
                     String result = "";
                     for (TagParameter tp: tag.getActual()) {
                         if (tag.getDefinition().getParamNumber().equals("1")) {
-        
+
                             result = tp.getValue();
                         }
                         else {
@@ -118,7 +118,7 @@ public class ModelUtils {
 
     /**
      * Allows the tagged value values parsing to string tab
-     * 
+     *
      * @param value : the tagged value
      * @return a string tab with many string values
      */
@@ -126,16 +126,16 @@ public class ModelUtils {
         List<String> dynamicList = new ArrayList<>();
         String current = "";
         boolean hasManyElts = false;
-        
+
         for (int i=0; i < value.length(); i++) {
             if (value.charAt(i) != ' ') {
                 current = current + value.charAt(i);
-        
+
                 if ((i == value.length()-1) && (hasManyElts)) {
                     dynamicList.add(current);
                 }
             }
-        
+
             if ((value.charAt(i) == ' ')&&(!current.equals(""))) {
                 dynamicList.add(current);
                 current = "";
@@ -146,14 +146,14 @@ public class ModelUtils {
                 current = "";
             }
         }
-        
+
         String[] result = dynamicList.toArray(new String[dynamicList.size()]);
         return result;
     }
 
     /**
      * Allows the tagged value adding.
-     * 
+     *
      * @param element : owner element
      * @param tagtypeName : tagged value name
      * @param value : value to add
@@ -164,29 +164,29 @@ public class ModelUtils {
         List<TaggedValue> tagElements = element.getTag();
         TaggedValue tvFound = null;
         TagType type = null;
-        
+
         // existing verification
         if (!tagElements.isEmpty()) {
             for (TaggedValue tag : tagElements) {
-        
+
                 type = tag.getDefinition();
                 String tagname = type.getName();
-        
+
                 if (tagname.equals(tagtypeName)) {
                     exist = true;
                     tvFound = tag;
                 }
             }
         }
-        
+
         // if the tagged value doesn't exist yet, we create this
         if (!exist) {
-        
+
             TaggedValue v = CPSwarmModule.getInstance().getModuleContext().getModelingSession().getModel().createTaggedValue(type, element);
             if (!v.getDefinition().getParamNumber().equals("0")) {
                 setTaggedValue(element, tagtypeName, value);
             }
-        
+
         }
         // if the tagged value already exists
         else {
@@ -201,7 +201,7 @@ public class ModelUtils {
 
     /**
      * Allows the tagged value setting
-     * 
+     *
      * @param elt : owner element
      * @param tagtypeName : name of the tagtype
      * @param value : taggeValue value
@@ -224,24 +224,24 @@ public class ModelUtils {
                     }
                     //if the parameter number is multiple
                     else if (tag.getDefinition().getParamNumber().equals("*")) {
-        
+
                         // string transformation to string tab
                         String[] tabValues = parseValuesToStringTab(value);
-        
+
                         // array list for the news tag parameters
                         List<TagParameter> listTagParam = new ArrayList<>();
-        
+
                         // old tag parameters deleting
                         for (TagParameter tp:tag.getActual()) {
                             tag.getActual().remove(tp);
                             tp.delete();
                         }
-        
+
                         // new list creating
                         for (String s:tabValues) {
                             listTagParam.add(CPSwarmModule.getInstance().getModuleContext().getModelingSession().getModel().createTagParameter(s+" ", tag));
                         }
-        
+
                         // new tag parameters adding
                         for (TagParameter tpl:listTagParam) {
                             tag.getActual().add(tpl);
@@ -251,68 +251,68 @@ public class ModelUtils {
                         // else, the parameter number is another number, 2, 3 4 etc.
                         try {
                             int nbParam = Integer.parseInt(tag.getDefinition().getParamNumber());
-        
+
                             // string transformation to string tab
                             String[] tabValues = parseValuesToStringTab(value);
-        
+
                             /* if (tabValues.length > nbParam) {
                                 //JOptionPane.showMessageDialog(null,  "You have too many parameter numbers, only "+tag.getDefinition().getParamNumber()+" has been set.", "Too many parameter numbers", JOptionPane.ERROR_MESSAGE);
                                 //MessageDialog.openError(null, "Too many parameter numbers", "You have too many parameter numbers, only "+tag.getDefinition().getParamNumber()+" has been set.");
                                 //MARTEFrame.marteShowMessageDialog(null, "Too many parameter numbers", "You have too many parameter numbers, only "+tag.getDefinition().getParamNumber()+" has been set.", JOptionPane.ERROR_MESSAGE);
                                 MARTEFrame f = new MARTEFrame("You have to enter integers.");
                                 f.show();
-        
+
                             }*/
                             // array list for the news tag parameters
                             List<TagParameter> listTagParam = new ArrayList<>();
-        
+
                             // old tag parameters deleting
                             for (TagParameter tp:tag.getActual()) {
                                 tag.getActual().remove(tp);
                                 tp.delete();
                             }
-        
+
                             // new list creating
                             for (int i = 0; i <tabValues.length;i++) {
                                 if (i<nbParam) {
                                     listTagParam.add(CPSwarmModule.getInstance().getModuleContext().getModelingSession().getModel().createTagParameter(tabValues[i]+" ", tag));
                                 }
                             }
-        
+
                             // new tag parameters adding
                             for (TagParameter tpl:listTagParam) {
                                 tag.getActual().add(tpl);
                             }
-        
+
                         }
                         catch (Exception e) {
                             JOptionPane.showMessageDialog(null, "Internal ERROR :\nThe parameter number is not a number.", "-- Internal Error --", JOptionPane.ERROR_MESSAGE);
                         }
-        
+
                     }
                 }
             }
         }
         else {
-        
+
         }
     }
 
     /**
      * Allows a string tab creating. The string tab element has this form : parentName::elementName
-     * 
+     *
      * @param listElement : the element list
      * @return a string tab
      */
     public static String[] createListString(final List<ModelElement> listElement) {
         List<String> listEltName = new ArrayList<>();
-        
+
         listEltName.add("");
-        
+
         for (ModelElement elt: listElement) {
             listEltName.add(getCPSwarmName(elt));
         }
-        
+
         Collections.sort(listEltName);
         String[] result = listEltName.toArray(new String[listEltName.size()]);
         return result;
@@ -320,7 +320,7 @@ public class ModelUtils {
 
     /**
      * Returns the "CPSwarm" name
-     * 
+     *
      * @param elt : the element
      * @return String : the CPSswarm name of the element.
      */
@@ -335,7 +335,7 @@ public class ModelUtils {
 
     /**
      * This method test if the SysML module is already deployed
-     * 
+     *
      * @return true if the SysML module is deployed
      */
     public static boolean isSysMLDeployed() {
@@ -344,7 +344,7 @@ public class ModelUtils {
 
     /**
      * This method test if the MARTE module is already deployed
-     * 
+     *
      * @return true if the MARTE module is deployed
      */
     public static boolean isMARTEDeployed() {
@@ -358,13 +358,13 @@ public class ModelUtils {
      */
     public static void setTaggedValue(TaggedValue tvFound, ModelElement elt, String value, ModelElement related, String modulelink, String stereotypeLink) {
         IUmlModel model = CPSwarmModule.getInstance().getModuleContext().getModelingSession().getModel();
-        
+
         for (Dependency existingLinks : new ArrayList<>(elt.getDependsOnDependency())) {
             if (existingLinks.isStereotyped(modulelink,stereotypeLink)) {
                 existingLinks.delete();
             }
         }
-        
+
         TagParameter firstElt = null;
         List<TagParameter> actuals = tvFound.getActual();
         if ((actuals != null) && (actuals.size() > 0)) {
@@ -373,7 +373,7 @@ public class ModelUtils {
             firstElt = model.createTagParameter();
             tvFound.getActual().add(firstElt);
         }
-        
+
         if (value.equals("false")) {
             tvFound.delete();
         } else {
@@ -393,35 +393,35 @@ public class ModelUtils {
      */
     public static void addValue(String modulename, String name, String value, ModelElement element, ModelElement related, String modulelink, String stereotypeLink) {
         boolean exist = false;
-        
+
         TaggedValue tag = null;
         List<TaggedValue> tagElements = element.getTag();
         IUmlModel model = CPSwarmModule.getInstance().getModuleContext().getModelingSession().getModel();
-        
+
         if (!tagElements.isEmpty()) {
             for (TaggedValue currentTag : tagElements) {
                 TagType type = currentTag.getDefinition();
                 String tagname = type.getName();
-        
+
                 if (tagname.equals(name)) {
                     exist = true;
                     tag = currentTag;
                     break;
-        
+
                 }
             }
         }
-        
+
         if (!exist) {
             try {
                 tag = model.createTaggedValue(modulename, name, element);
-        
+
             } catch (Exception e) {
                 CPSwarmModule.logService.error(e);
             }
-        
+
         }
-        
+
         setTaggedValue(tag, element, value, related,modulelink, stereotypeLink);
     }
 
@@ -429,14 +429,14 @@ public class ModelUtils {
         boolean exist = false;
         List<TaggedValue> tagElements = element.getTag();
         TaggedValue tvFound = null;
-        
+
         // existing verification
         if (!tagElements.isEmpty()) {
             for (TaggedValue tag : tagElements) {
-        
+
                 TagType type = tag.getDefinition();
                 String tagname = type.getName();
-        
+
                 if (tagname.equals(name)) {
                     exist = true;
                     // Modelio.out.println("tvFound FOUND");
@@ -444,7 +444,7 @@ public class ModelUtils {
                 }
             }
         }
-        
+
         // if the tagged value doesn't exist yet, we create this
         if (!exist) {
             try {
@@ -472,13 +472,13 @@ public class ModelUtils {
     public static void setTaggedValue(String name, ModelElement elt, String value) {
         List<TaggedValue> tagElements = elt.getTag();
         IUmlModel model = CPSwarmModule.getInstance().getModuleContext().getModelingSession().getModel();
-        
+
         if (!tagElements.isEmpty()) {
-        
+
             for (TaggedValue tag : tagElements) {
                 String tagname = tag.getDefinition().getName();
                 if (tagname.equals(name)) {
-        
+
                     TagParameter firstElt = null;
                     List<TagParameter> actuals = tag.getActual();
                     if ((actuals != null) && (actuals.size() > 0)) {
@@ -487,7 +487,7 @@ public class ModelUtils {
                         firstElt = model.createTagParameter();
                         tag.getActual().add(firstElt);
                     }
-        
+
                     if (((value.equals("false")) && (tag.getDefinition().getParamNumber().equals("0")))
                             || ((value.equals("")) && (tag.getDefinition().getParamNumber().equals("1")))) {
                         tag.delete();
@@ -532,7 +532,7 @@ public class ModelUtils {
             foundElementNameInCurrentIteration =false;
             i++;
         }
-        
+
         if(currentElement != null && i == pathArrayLength) {
             return currentElement;
         }
@@ -559,7 +559,7 @@ public class ModelUtils {
 
     public static String getROSFullName(ModelTree tree) {
         String result = tree.getName();
-        
+
         while ((tree.getCompositionOwner() instanceof ModelTree)
                 && ((ModelTree) tree.getCompositionOwner()).isStereotyped(CPSwarmPeerModule.MODULE_NAME, ROSPackage.STEREOTYPE_NAME)) {
             tree  = (ModelTree) tree.getCompositionOwner();
@@ -582,7 +582,7 @@ public class ModelUtils {
 
     public static List<Attribute> getGoals(Interface action) {
         List<Attribute> goals = new ArrayList<>();
-        
+
         for(Attribute att : action.getOwnedAttribute()) {
             if (att.isStereotyped(CPSwarmPeerModule.MODULE_NAME, GOAL.STEREOTYPE_NAME)) {
                goals.add(att);
@@ -593,7 +593,7 @@ public class ModelUtils {
 
     public static List<Attribute> getResults(Interface action) {
         List<Attribute> results = new ArrayList<>();
-        
+
         for(Attribute att : action.getOwnedAttribute()) {
             if (att.isStereotyped(CPSwarmPeerModule.MODULE_NAME, RESULT.STEREOTYPE_NAME)) {
                 results.add(att);
@@ -604,7 +604,7 @@ public class ModelUtils {
 
     public static List<Transition> getEventMonitoring(State state) {
         List<Transition> events = new ArrayList<>();
-        
+
         for (Transition transition : state.getOutGoing()) {
             if ((transition.getTrigger() != null) && (transition.getTrigger().getModel() != null)) {
                 events.add(transition);
