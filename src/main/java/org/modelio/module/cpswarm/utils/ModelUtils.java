@@ -3,7 +3,9 @@ package org.modelio.module.cpswarm.utils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import javax.swing.JOptionPane;
+
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.uml.behavior.stateMachineModel.InitialPseudoState;

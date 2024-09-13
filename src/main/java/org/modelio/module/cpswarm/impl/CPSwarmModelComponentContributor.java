@@ -3,6 +3,7 @@ package org.modelio.module.cpswarm.impl;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
 import org.modelio.api.modelio.mc.AbstractModelComponentContributor;
 import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.modelio.model.IModelingSession;

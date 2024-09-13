@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.metamodel.diagrams.AbstractDiagram;
 import org.modelio.metamodel.uml.infrastructure.Dependency;

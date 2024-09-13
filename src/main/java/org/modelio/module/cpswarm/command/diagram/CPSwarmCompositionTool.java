@@ -29,11 +29,12 @@
 package org.modelio.module.cpswarm.command.diagram;
 
 import java.util.List;
+
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
-import org.modelio.api.modelio.diagram.IDiagramLink.LinkRouterKind;
 import org.modelio.api.modelio.diagram.IDiagramLink;
-import org.modelio.api.modelio.diagram.ILinkPath;
+import org.modelio.api.modelio.diagram.IDiagramLink.LinkRouterKind;
+import org.modelio.api.modelio.diagram.ILinkRoute;
 import org.modelio.api.modelio.diagram.InvalidDestinationPointException;
 import org.modelio.api.modelio.diagram.InvalidPointsPathException;
 import org.modelio.api.modelio.diagram.InvalidSourcePointException;
@@ -78,7 +79,7 @@ public class CPSwarmCompositionTool extends DefaultLinkTool {
     }
 
     @Override
-    public void actionPerformed(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic destination, LinkRouterKind kind, ILinkPath path) {
+    public void actionPerformed(IDiagramHandle representation, IDiagramGraphic source, IDiagramGraphic destination, LinkRouterKind kind, ILinkRoute path) {
         IModelingSession session = CPSwarmModule.getInstance().getModuleContext().getModelingSession();
         IUmlModel model = session.getModel();
         
@@ -113,7 +114,7 @@ public class CPSwarmCompositionTool extends DefaultLinkTool {
             for (IDiagramGraphic graphic : graphics){
                 if (graphic instanceof IDiagramLink){
                     IDiagramLink link = (IDiagramLink) graphic;
-                    link.setPath(path);
+                    link.setRoute(path);
                 }
             }
         

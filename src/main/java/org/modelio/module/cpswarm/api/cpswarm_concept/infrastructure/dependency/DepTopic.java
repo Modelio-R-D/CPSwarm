@@ -6,20 +6,11 @@
  */
 package org.modelio.module.cpswarm.api.cpswarm_concept.infrastructure.dependency;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Objects;
-import org.modelio.api.modelio.model.IModelingSession;
-import org.modelio.api.modelio.model.PropertyConverter;
 import org.modelio.api.module.context.IModuleContext;
-import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.infrastructure.Dependency;
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.infrastructure.Stereotype;
 import org.modelio.metamodel.uml.infrastructure.TagType;
-import org.modelio.metamodel.uml.infrastructure.properties.PropertyDefinition;
-import org.modelio.metamodel.uml.infrastructure.properties.PropertyTableDefinition;
-import org.modelio.module.cpswarm.api.CPSwarmProxyFactory;
 import org.modelio.module.cpswarm.api.ICPSwarmPeerModule;
 import org.modelio.module.cpswarm.impl.CPSwarmModule;
 import org.modelio.vcore.smkernel.mapi.MObject;

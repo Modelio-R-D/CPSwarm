@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.command.explorer.diagram.command;
 
 import java.util.List;
+
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
 import org.modelio.api.module.IModule;

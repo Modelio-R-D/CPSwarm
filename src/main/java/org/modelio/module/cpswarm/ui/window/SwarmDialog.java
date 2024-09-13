@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.ui.window;
 
 import java.util.ArrayList;
+
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.TableEditor;

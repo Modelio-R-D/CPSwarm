@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.impl;
 
 import java.util.List;
+
 import org.modelio.api.module.IModule;
 import org.modelio.api.module.propertiesPage.AbstractModulePropertyPage;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;

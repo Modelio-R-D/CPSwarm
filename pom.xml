@@ -12,6 +12,10 @@
           <id>modelio</id>
           <url>http://repository.modelio.org</url>
       </repository>
+      <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+      </repository>
   </repositories>
 
   <pluginRepositories>
@@ -31,7 +35,7 @@
         <dependency>
             <groupId>org.modelio</groupId>
             <artifactId>MDAKit</artifactId>
-            <version>[4.1.0,4.1.1)</version>
+            <version>[5.4.1,6.0.0)</version>
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
@@ -39,7 +43,7 @@
         <dependency>
             <groupId>org.modelio</groupId>
             <artifactId>org.modelio.modelermodule</artifactId>
-            <version>9.2.00</version>
+            <version>9.4.00</version>
             <scope>provided</scope>
         </dependency>
 
@@ -59,6 +63,19 @@
             <type>jar</type>
         </dependency>
 
+	    <dependency>
+	        <groupId>jakarta.xml.bind</groupId>
+	        <artifactId>jakarta.xml.bind-api</artifactId>
+	        <version>4.0.0</version>
+	        <type>jar</type> 
+	    </dependency>
+	
+	    <dependency>
+	        <groupId>org.glassfish.jaxb</groupId>
+	        <artifactId>jaxb-runtime</artifactId>
+	        <version>4.0.2</version>
+	        <type>jar</type>
+	    </dependency>
     </dependencies>
 
     <!-- // Build // -->
@@ -80,7 +97,7 @@
             <plugin>
                 <groupId>org.modelio</groupId>
                 <artifactId>modelio-maven-plugin</artifactId>
-                <version>4.1.0.00</version>
+                <version>5.4.1.00</version>
                 <executions>
                     <execution>
                         <id>ModuleValidation</id>
@@ -204,7 +221,7 @@
                                                 modelio-maven-plugin
                                             </artifactId>
                                             <versionRange>
-                                                [4.1.0.00,)
+                                                [5.4.1.00,)
                                             </versionRange>
                                             <goals>
                                                 <goal>

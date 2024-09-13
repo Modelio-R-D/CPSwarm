@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.modelio.metamodel.uml.statik.AssociationEnd;
 import org.modelio.metamodel.uml.statik.Parameter;
 import org.modelio.module.cpswarm.api.CPSwarmStereotypes;
@@ -15,6 +15,8 @@ import org.modelio.module.cpswarm.api.cpswarm_concept.standard.parameter.Optimis
 import org.modelio.module.cpswarm.impl.CPSwarmModule;
 import org.modelio.module.cpswarm.type.optimisation.OptimisedParameters;
 import org.modelio.module.cpswarm.utils.FileUtils;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class OptimisedParameterGeneration extends Generator implements IGenerator {
     public OptimisedParameterGeneration(File file) {

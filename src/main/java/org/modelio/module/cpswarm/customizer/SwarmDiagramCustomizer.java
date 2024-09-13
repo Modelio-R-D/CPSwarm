@@ -2,6 +2,7 @@ package org.modelio.module.cpswarm.customizer;
 
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.gef.palette.MarqueeToolEntry;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteEntry;

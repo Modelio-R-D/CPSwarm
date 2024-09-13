@@ -32,9 +32,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
 import org.modelio.metamodel.uml.statik.Attribute;
 import org.modelio.metamodel.uml.statik.BindableInstance;
@@ -52,6 +50,10 @@ import org.modelio.module.cpswarm.impl.CPSwarmModule;
 import org.modelio.module.cpswarm.impl.CPSwarmPeerModule;
 import org.modelio.module.cpswarm.type.abstraction.SensorsActuator.Category;
 import org.modelio.module.cpswarm.utils.ModelUtils;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * This class handles Abstraction export

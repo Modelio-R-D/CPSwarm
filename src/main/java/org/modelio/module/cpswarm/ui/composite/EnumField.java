@@ -2,6 +2,7 @@ package org.modelio.module.cpswarm.ui.composite;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.IBaseLabelProvider;

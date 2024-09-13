@@ -3,13 +3,15 @@ package org.modelio.module.cpswarm.generator;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+
 import org.modelio.metamodel.uml.statik.AssociationEnd;
 import org.modelio.module.cpswarm.impl.CPSwarmModule;
 import org.modelio.module.cpswarm.type.swarm.Swarm;
 import org.modelio.module.cpswarm.type.swarm.SwarmMember;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
 
 public class SwarmCompositionGeneration extends Generator implements IGenerator {
     private org.modelio.metamodel.uml.statik.Class swarm = null;

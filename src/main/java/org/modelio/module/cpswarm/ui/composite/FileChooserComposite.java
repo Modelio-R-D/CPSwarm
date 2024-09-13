@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.ui.composite;
 
 import java.io.File;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormLayout;

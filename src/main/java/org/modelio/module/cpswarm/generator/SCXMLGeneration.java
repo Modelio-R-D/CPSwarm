@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.modelio.metamodel.uml.behavior.commonBehaviors.Event;
 import org.modelio.metamodel.uml.behavior.commonBehaviors.Signal;
 import org.modelio.metamodel.uml.behavior.stateMachineModel.FinalState;

@@ -3,6 +3,7 @@ package org.modelio.module.cpswarm.generator;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.modelio.metamodel.uml.infrastructure.ModelElement;
 import org.modelio.metamodel.uml.statik.AttributeLink;
 import org.modelio.metamodel.uml.statik.BindableInstance;

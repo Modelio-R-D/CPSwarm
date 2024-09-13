@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.command.explorer;
 
 import java.util.List;
+
 import org.eclipse.swt.widgets.Display;
 import org.modelio.api.module.IModule;
 import org.modelio.api.module.command.DefaultModuleCommandHandler;

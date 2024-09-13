@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.command.diagram;
 
 import java.util.List;
+
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.modelio.api.modelio.diagram.IDiagramGraphic;
 import org.modelio.api.modelio.diagram.IDiagramHandle;

@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.propertypage;
 
 import java.util.List;
+
 import org.modelio.api.modelio.model.IMetamodelExtensions;
 import org.modelio.api.module.context.IModuleContext;
 import org.modelio.api.module.propertiesPage.IModulePropertyTable;

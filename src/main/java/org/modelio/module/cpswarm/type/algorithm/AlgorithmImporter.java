@@ -30,9 +30,7 @@ package org.modelio.module.cpswarm.type.algorithm;
 
 import java.io.File;
 import java.io.IOException;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.IUmlModel;
 import org.modelio.metamodel.mmextensions.infrastructure.ExtensionNotFoundException;
@@ -45,6 +43,10 @@ import org.modelio.metamodel.uml.statik.Operation;
 import org.modelio.metamodel.uml.statik.Parameter;
 import org.modelio.metamodel.uml.statik.PassingMode;
 import org.modelio.module.cpswarm.impl.CPSwarmModule;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * This class handles ModelDescription import

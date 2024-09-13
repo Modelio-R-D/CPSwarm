@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.impl;
 
 import java.util.Set;
+
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.event.IModelChangeEvent;
 import org.modelio.api.modelio.model.event.IModelChangeHandler;

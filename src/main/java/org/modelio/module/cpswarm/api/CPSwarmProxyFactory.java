@@ -29,6 +29,35 @@ import org.modelio.metamodel.uml.statik.Port;
 import org.modelio.metamodel.visitors.IDefaultInfrastructureVisitor;
 import org.modelio.metamodel.visitors.IDefaultModelVisitor;
 import org.modelio.metamodel.visitors.IInfrastructureVisitor;
+import org.modelio.module.cpswarm.api.cpswarm_concept.infrastructure.dependency.DepCommModel;
+import org.modelio.module.cpswarm.api.cpswarm_concept.infrastructure.dependency.DepMsg;
+import org.modelio.module.cpswarm.api.cpswarm_concept.infrastructure.dependency.DepPort;
+import org.modelio.module.cpswarm.api.cpswarm_concept.infrastructure.dependency.DepTopic;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.associationend.OptimisedEnd;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.attribute.GOAL;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.attribute.RESULT;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.class_.Actuator;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.class_.CommunicationInterface;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.class_.Problem;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.class_.Sensor;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.class_.Virtual;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.component.ROSComponent;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.interface_.ROSAction;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.interface_.ROSService;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.internaltransition.Mapped;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.operation.RoSAbstraction;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.operation.RoSAlgorithm;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.package_.EnvironmentDefinition;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.package_.FitnessDefinition;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.package_.ROSPackage;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.parameter.OptimisedParameter;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.port.OptimisedPort;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.state.ROSMonitoring;
+import org.modelio.module.cpswarm.api.cpswarm_concept.standard.umlmodelelement.OptimisedArgument;
+import org.modelio.module.cpswarm.api.cpswarm_diagram.standard.classdiagram.FitnessDefinitionDiagram;
+import org.modelio.module.cpswarm.api.cpswarm_diagram.standard.classdiagram.SwarmCompositionDiagram;
+import org.modelio.module.cpswarm.api.cpswarm_sdf.standard.package_.SDFRoot;
+import org.modelio.module.cpswarm.api.cpswarm_sdf.standard.package_.World;
 
 /**
  * Factory that instantiates the right proxy class for a model element stereotyped by a 'CPSwarm' module stereotype.

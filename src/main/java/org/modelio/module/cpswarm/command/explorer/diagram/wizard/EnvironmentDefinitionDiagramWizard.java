@@ -29,6 +29,7 @@
 package org.modelio.module.cpswarm.command.explorer.diagram.wizard;
 
 import java.util.Arrays;
+
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.modelio.api.modelio.diagram.IDiagramHandle;
 import org.modelio.api.modelio.diagram.IDiagramService;

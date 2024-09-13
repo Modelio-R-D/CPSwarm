@@ -1,6 +1,7 @@
 package org.modelio.module.cpswarm.impl;
 
 import java.io.File;
+
 import org.modelio.api.module.context.configuration.IModuleAPIConfiguration;
 import org.modelio.metamodel.uml.behavior.stateMachineModel.StateMachine;
 import org.modelio.module.cpswarm.api.ICPSwarmPeerModule;

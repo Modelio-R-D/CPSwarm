@@ -5,11 +5,12 @@ import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.modelio.api.modelio.IModelioServices;
 import org.modelio.api.modelio.model.IModelingSession;
 import org.modelio.api.modelio.model.ITransaction;
-import org.modelio.api.modelio.pattern.IPatternService.PatternException;
 import org.modelio.api.modelio.pattern.IPatternService;
+import org.modelio.api.modelio.pattern.IPatternService.PatternException;
 import org.modelio.api.module.IModule;
 import org.modelio.api.module.command.DefaultModuleCommandHandler;
 import org.modelio.api.module.context.IModuleContext;
